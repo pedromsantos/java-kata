@@ -69,6 +69,7 @@
 		<module>3-fibonacci</module>
 		<module>4-stack</module>
 		<module>5-roman</module>
+		<module>6-primes</module>
 		<module>coverage</module>
 	</modules>
 

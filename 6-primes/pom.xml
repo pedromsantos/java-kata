@@ -12,10 +12,10 @@
 	</parent>
 
 	<groupId>com.github.pedromsantos</groupId>
-	<artifactId>leapyear</artifactId>
+	<artifactId>primes</artifactId>
 	<version>1.0-0</version>
 
-	<name>Leap Year</name>
+	<name>Prime Factors</name>
 	<description>
   	Details on README.md
   </description>
