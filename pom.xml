@@ -71,6 +71,8 @@
 		<module>5-roman</module>
 		<module>6-primes</module>
 		<module>7-tictactoe</module>
+		<module>8-yahtzee</module>
+		<module>9-MarsRover</module>
 		<module>coverage</module>
 	</modules>
 
