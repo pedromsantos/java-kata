@@ -70,6 +70,7 @@
 		<module>4-stack</module>
 		<module>5-roman</module>
 		<module>6-primes</module>
+		<module>7-tictactoe</module>
 		<module>coverage</module>
 	</modules>
 
