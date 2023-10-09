@@ -7,7 +7,7 @@ This project contains a number of katas with instructions ordered in a proven pa
 ### Build solution
 
 ```sh
-mvn build
+mvn compile
 ```
 
 ### Execute tests
