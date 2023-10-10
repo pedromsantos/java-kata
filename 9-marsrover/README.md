@@ -4,7 +4,8 @@
 
 A robot rover is landed by NASA on a plateau on Mars.
 The plateau is divided up into a grid to simplify navigation.
-This plateau, must be navigated by the rover so that it´s on-board cameras can get a complete view of the surrounding terrain to send back to Earth.
+This plateau, must be navigated by the rover so that it´s on-board cameras can get a complete view of the surrounding
+terrain to send back to Earth.
 
 ## Input
 
@@ -28,7 +29,8 @@ This plateau, must be navigated by the rover so that it´s on-board cameras can 
 MLMLMLMM
 ```
 
-Assume that NASA will never send invalid messages to the rover, nor will it send a message moving the rover outside the defined grid.
+Assume that NASA will never send invalid messages to the rover, nor will it send a message moving the rover outside the
+defined grid.
 
 ## Output
 
@@ -83,4 +85,5 @@ const finalPosition = rover.execute('5 5\n1 2 N\nLMLMLMLMM');
 
 Refactor the code you produced in the first run using design patterns, namely Command, State and Strategy.
 
-Additional reading after completing the exercise <https://www.codurance.com/publications/2019/01/22/mars-rover-kata-refactoring-to-patterns>
+Additional reading after completing the
+exercise <https://www.codurance.com/publications/2019/01/22/mars-rover-kata-refactoring-to-patterns>

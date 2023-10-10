@@ -1,50 +1,50 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-	<modelVersion>4.0.0</modelVersion>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns="http://maven.apache.org/POM/4.0.0"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
 
-	<parent>
-		<groupId>com.github.pedromsantos</groupId>
-		<version>1.0-0</version>
-		<artifactId>java-kata</artifactId>
-	</parent>
+    <parent>
+        <groupId>com.github.pedromsantos</groupId>
+        <version>1.0-0</version>
+        <artifactId>java-kata</artifactId>
+    </parent>
 
-	<groupId>com.github.pedromsantos</groupId>
-	<artifactId>coverage</artifactId>
-	<version>1.0-0</version>
+    <groupId>com.github.pedromsantos</groupId>
+    <artifactId>coverage</artifactId>
+    <version>1.0-0</version>
 
-	<name>Coverage</name>
-	<description>
-  	Coverage report aggregator
-  </description>
+    <name>Coverage</name>
+    <description>
+        Coverage report aggregator
+    </description>
 
-	<dependencies>
-		<dependency>
-			<groupId>com.github.pedromsantos</groupId>
-			<artifactId>fizzbuzz</artifactId>
-			<version>1.0-0</version>
-		</dependency>
-	</dependencies>
+    <dependencies>
+        <dependency>
+            <groupId>com.github.pedromsantos</groupId>
+            <artifactId>fizzbuzz</artifactId>
+            <version>1.0-0</version>
+        </dependency>
+    </dependencies>
 
 
-	<build>
-		<plugins>
-			<plugin>
-				<groupId>org.jacoco</groupId>
-				<artifactId>jacoco-maven-plugin</artifactId>
-				<executions>
-					<execution>
-						<id>report-aggregate</id>
-						<phase>verify</phase>
-						<goals>
-							<goal>report-aggregate</goal>
-						</goals>
-					</execution>
-				</executions>
-			</plugin>
-		</plugins>
-	</build>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.jacoco</groupId>
+                <artifactId>jacoco-maven-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>report-aggregate</id>
+                        <phase>verify</phase>
+                        <goals>
+                            <goal>report-aggregate</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
 
 </project>

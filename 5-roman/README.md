@@ -60,9 +60,13 @@ Use the Transformation Priority Premise table to evolve your code.
 | 12  | Expression -> function       | today – birth      | CalculateBirthDate()                     |
 | 13  | Variable -> mutation         | day                | var Day = 10; Day = 11;                  |
 
-Transformations at the top of the list have priority over those at the bottom. It is better (or simpler) to change a constant into a variable than it is to add an `if` statement. So when making a test pass, favor simpler transformations (top of the list) over those more complicated (bottom of the list).
+Transformations at the top of the list have priority over those at the bottom. It is better (or simpler) to change a
+constant into a variable than it is to add an `if` statement. So when making a test pass, favor simpler
+transformations (top of the list) over those more complicated (bottom of the list).
 
-Another way to use the Transformation Priority Premise is to keep writing new code using obvious implementation. Whenever duplication is detected, refactor to the next transformation to remove it. When refactoring, first try to use a simpler one. That does not always work; sometimes, you must move to a more complicated transformation or a mix of both.
+Another way to use the Transformation Priority Premise is to keep writing new code using obvious implementation.
+Whenever duplication is detected, refactor to the next transformation to remove it. When refactoring, first try to use a
+simpler one. That does not always work; sometimes, you must move to a more complicated transformation or a mix of both.
 
 ### Example using Transformation Priority Premise on Fibonacci sequence
 
