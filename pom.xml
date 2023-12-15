@@ -10,7 +10,7 @@
     <version>1.0-0</version>
     <packaging>pom</packaging>
 
-    <name>Java Katas</name>
+    <name>Java Kata's</name>
 
     <properties>
         <maven.compiler.release>17</maven.compiler.release>
