@@ -20,7 +20,7 @@
         <junit5.version>5.10.1</junit5.version>
         <assertj.version>3.24.2</assertj.version>
         <surefire.version>3.2.3</surefire.version>
-        <jacoco.version>0.8.10</jacoco.version>
+        <jacoco.version>0.8.11</jacoco.version>
     </properties>
 
     <dependencyManagement>
