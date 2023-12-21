@@ -21,6 +21,7 @@
         <assertj.version>3.24.2</assertj.version>
         <surefire.version>3.2.3</surefire.version>
         <jacoco.version>0.8.11</jacoco.version>
+        <params.version>5.10.0</params.version>
     </properties>
 
     <dependencyManagement>
@@ -34,7 +35,7 @@
             <dependency>
                 <groupId>org.junit.jupiter</groupId>
                 <artifactId>junit-jupiter-params</artifactId>
-                <version>5.10.0</version>
+                <version>${params.version}</version>
                 <scope>test</scope>
             </dependency>
             <dependency>
