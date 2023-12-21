@@ -33,11 +33,9 @@ Write characterization tests to describe the code as is.
 ### Second run - Configure mutation testing
 
 - Use mutation tests to further increase the confidence on your tests
-  - run `yarn mutants`
-  - Check the mutation test report here:
-    - <reports/mutation/mutation.html>
-    - <reports/mutation/mutation.html#mutant/11_GildedRose/kata.ts>
-  - Add any missing tests the mutation tool uncovers
+  1. ```cd 11-gilded```
+  2. ```mvn test-compile org.pitest:pitest-maven:mutationCoverage```
+  3. Add any missing tests the mutation tool uncovers
 
 ### Third run - Add approval (aka golden master/snapshot) tests
 
