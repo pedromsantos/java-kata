@@ -38,6 +38,12 @@
 | **2000**          | MM                |
 | **3000**          | MMM               |
 
+## Folow TDD rules stryctly
+
+1. Write production code only to pass a failing unit test.
+2. Write no more of a unit test than sufficient to fail (compilation failures are failures).
+3. Write no more production code than necessary to pass the one failing unit test.
+
 ## Second run
 
 Use the Transformation Priority Premise table to evolve your code.
@@ -60,13 +66,9 @@ Use the Transformation Priority Premise table to evolve your code.
 | 12  | Expression -> function       | today – birth      | CalculateBirthDate()                     |
 | 13  | Variable -> mutation         | day                | var Day = 10; Day = 11;                  |
 
-Transformations at the top of the list have priority over those at the bottom. It is better (or simpler) to change a
-constant into a variable than it is to add an `if` statement. So when making a test pass, favor simpler
-transformations (top of the list) over those more complicated (bottom of the list).
+Transformations at the top of the list have priority over those at the bottom. It is better (or simpler) to change a constant into a variable than it is to add an `if` statement. So when making a test pass, favor simpler transformations (top of the list) over those more complicated (bottom of the list).
 
-Another way to use the Transformation Priority Premise is to keep writing new code using obvious implementation.
-Whenever duplication is detected, refactor to the next transformation to remove it. When refactoring, first try to use a
-simpler one. That does not always work; sometimes, you must move to a more complicated transformation or a mix of both.
+Another way to use the Transformation Priority Premise is to keep writing new code using obvious implementation. Whenever duplication is detected, refactor to the next transformation to remove it. When refactoring, first try to use a simpler one. That does not always work; sometimes, you must move to a more complicated transformation or a mix of both.
 
 ### Example using Transformation Priority Premise on Fibonacci sequence
 
@@ -76,8 +78,8 @@ simpler one. That does not always work; sometimes, you must move to a more compl
 | 0     | 0               | Nil -> constant              | `return 0`                                                              |
 | 1     | 1               | Constant -> scalar           | `return index`                                                          |
 | 2     | 1               | Unconditional -> conditional | `if number < 2 then return index else return index - 1`                 |
-| 3     | 2               | Unconditional -> conditional | No change                                                               |
-| 4     | 3               | Unconditional -> conditional | No change                                                               |
+| 3     | 2               | Unconditional -> conditional | `if number < 2 then return index else return index - 1` NO CHANGE       |
+| 4     | 3               | Unconditional -> conditional | `if number < 2 then return index else return index - 1` NO CHANGE       |
 | 5     | 5               | Scalar -> array              | `var fibs = [0, 1, 1, 2, 3, 5]; return fibs[index]`                     |
 | 6     | 8               | Scalar -> array              | `var fibs = [0, 1, 1, 2, 3, 5, 8]; return fibs[index]`                  |
 | 7     | 13              | Scalar -> array(duplication) | `var fibs = [0, 1, 1, 2, 3, 5, 8, 13]; return fibs[index]`              |

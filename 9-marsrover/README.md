@@ -4,8 +4,7 @@
 
 A robot rover is landed by NASA on a plateau on Mars.
 The plateau is divided up into a grid to simplify navigation.
-This plateau, must be navigated by the rover so that it´s on-board cameras can get a complete view of the surrounding
-terrain to send back to Earth.
+This plateau, must be navigated by the rover so that it´s on-board cameras can get a complete view of the surrounding terrain to send back to Earth.
 
 ## Input
 
@@ -29,8 +28,7 @@ terrain to send back to Earth.
 MLMLMLMM
 ```
 
-Assume that NASA will never send invalid messages to the rover, nor will it send a message moving the rover outside the
-defined grid.
+Assume that NASA will never send invalid messages to the rover, nor will it send a message moving the rover outside the defined grid.
 
 ## Output
 
@@ -74,6 +72,12 @@ MMRMMRMRRM
 
 Implement the Mars Rover as best as you can using TDD.
 
+There are 2 acceptance tests to get you started. Treat them as an automated "definition of done". Once the 2 acceptance tests are passing your are done :) Don't try to make the acceptance tests go green. Focus on writing smaller unit tests to implement the behaviour requiered and leave the acceptance tests on red. Once you impplement all behaviours the acceptance tests should turn green.
+
+### Important
+
+**_Your first task is to make the acceptance tests fail for the rigth reason._**
+
 ### Example starting code
 
 ```typescript
@@ -85,5 +89,4 @@ const finalPosition = rover.execute('5 5\n1 2 N\nLMLMLMLMM');
 
 Refactor the code you produced in the first run using design patterns, namely Command, State and Strategy.
 
-Additional reading after completing the
-exercise <https://www.codurance.com/publications/2019/01/22/mars-rover-kata-refactoring-to-patterns>
+Additional reading after completing the exercise <https://www.codurance.com/publications/2019/01/22/mars-rover-kata-refactoring-to-patterns>
