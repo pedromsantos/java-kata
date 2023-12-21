@@ -16,6 +16,7 @@
         <module name="fizzbuzz" />
         <module name="tictactoe" />
         <module name="yahtzee" />
+        <module name="tennis" />
       </profile>
     </annotationProcessing>
   </component>

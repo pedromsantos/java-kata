@@ -11,10 +11,10 @@
         <artifactId>java-kata</artifactId>
     </parent>
 
-    <artifactId>marsrover</artifactId>
+    <artifactId>tennis</artifactId>
     <version>1.0-0</version>
 
-    <name>Mars Rover</name>
+    <name>Tennis</name>
     <description>
         Details on README.md
     </description>
