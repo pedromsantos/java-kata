@@ -11,6 +11,7 @@
         <module name="stack" />
         <module name="primes" />
         <module name="marsrover" />
+        <module name="gilded" />
         <module name="roman" />
         <module name="leapyear" />
         <module name="fizzbuzz" />
