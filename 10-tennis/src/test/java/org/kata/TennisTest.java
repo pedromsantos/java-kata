@@ -1,10 +1,11 @@
-import java.util.stream.Stream;
-import org.junit.jupiter.params.ParameterizedTest;
-import static org.junit.jupiter.api.Assertions.assertEquals;
+package org.kata;
 
+import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.MethodSource;
-import org.kata.TennisGame;
-import org.kata.TennisGame1;
+
+import java.util.stream.Stream;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class TennisTest {
 
@@ -65,7 +66,7 @@ public class TennisTest {
     @ParameterizedTest
     @MethodSource("getAllScores")
     public void checkAllScoresTennisGame1(int player1Points, int player2Points, String expectedScore) {
-        TennisGame game = new TennisGame1("player1", "player2");
+        TennisGame game = new org.kata.TennisGame1("player1", "player2");
         checkAllScores(player1Points, player2Points, expectedScore, game);
     }
 }
