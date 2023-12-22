@@ -17,11 +17,6 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
-        <junit5.version>5.10.1</junit5.version>
-        <assertj.version>3.24.2</assertj.version>
-        <surefire.version>3.2.3</surefire.version>
-        <jacoco.version>0.8.11</jacoco.version>
-        <params.version>5.10.1</params.version>
     </properties>
 
     <dependencyManagement>
@@ -29,19 +24,19 @@
             <dependency>
                 <groupId>org.junit.jupiter</groupId>
                 <artifactId>junit-jupiter-engine</artifactId>
-                <version>${junit5.version}</version>
+                <version>5.10.1</version>
                 <scope>test</scope>
             </dependency>
             <dependency>
                 <groupId>org.junit.jupiter</groupId>
                 <artifactId>junit-jupiter-params</artifactId>
-                <version>${params.version}</version>
+                <version>5.10.1</version>
                 <scope>test</scope>
             </dependency>
             <dependency>
                 <groupId>org.assertj</groupId>
                 <artifactId>assertj-core</artifactId>
-                <version>${assertj.version}</version>
+                <version>3.24.2</version>
                 <scope>test</scope>
             </dependency>
         </dependencies>
@@ -53,12 +48,12 @@
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-surefire-plugin</artifactId>
-                    <version>${surefire.version}</version>
+                    <version>3.2.3</version>
                 </plugin>
                 <plugin>
                     <groupId>org.jacoco</groupId>
                     <artifactId>jacoco-maven-plugin</artifactId>
-                    <version>${jacoco.version}</version>
+                    <version>0.8.11</version>
                     <executions>
                         <execution>
                             <id>prepare-agent</id>
