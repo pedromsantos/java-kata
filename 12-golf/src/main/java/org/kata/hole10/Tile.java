@@ -16,7 +16,7 @@ public class Tile
 
     public boolean isNotEmpty() { return this.getPlayer() != ' ';}
 
-    public boolean hasSameSymbolAs(Tile other) { return this.getPlayer() == other.getPlayer();}
+    public boolean hasSamePlayerAs(Tile other) { return this.getPlayer() == other.getPlayer();}
 
     public boolean hasSamePositionAs(Tile other) {return this.position.equals(other.position);}
 

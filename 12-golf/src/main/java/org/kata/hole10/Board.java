@@ -49,8 +49,8 @@ public class Board
     }
 
     private char commonPlayerOnAllColumns(int row) {
-        if (TileAt(new Tile(row, 0)).hasSameSymbolAs(TileAt(new Tile(row, 1))) &&
-                TileAt(new Tile(row, 2)).hasSameSymbolAs(TileAt(new Tile(row, 1)))) {
+        if (TileAt(new Tile(row, 0)).hasSamePlayerAs(TileAt(new Tile(row, 1))) &&
+                TileAt(new Tile(row, 2)).hasSamePlayerAs(TileAt(new Tile(row, 1)))) {
             return TileAt(new Tile(row, 0)).getPlayer();
         }
         return ' ';
