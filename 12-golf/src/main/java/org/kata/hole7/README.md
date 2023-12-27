@@ -18,10 +18,10 @@ Let's now turn our attention to class `Tile`
 
   - Modify the constructor of Board to use the Tile contructor
     - Refactor the constructor on bord to rename loop variable `i` and `j` to `row` and `column`
-    - Inline variable tile in `Board` contructor
-    - on method `isRowFull` replace Symbol comparisation with method call `isNotEmpty` on `Tile`
-    - on method `commonPlayerOnAllColumns` replace Symbol comparisation with method call `hasSameSymbol` on Tile
-    - Refactor `TileAt` to use method `hasSamePosition` and default symbol contructor on `Tile`
+    - Inline variable tile
+  - on method `isRowFull` replace Symbol comparisation with method call `isNotEmpty` on `Tile`
+  - on method `commonPlayerOnAllColumns` replace Symbol comparisation with method call `hasSameSymbol` on Tile
+  - Refactor `TileAt` to use method `hasSamePosition` and default symbol contructor on `Tile`
 
 - On class `Game`
   - Refactor the method `validatePosition` to use method `isNotEmpty` on `Tile`
