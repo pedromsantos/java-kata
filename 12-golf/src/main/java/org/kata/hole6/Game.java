@@ -1,4 +1,4 @@
-package org.kata.hole5;
+package org.kata.hole6;
 
 public class Game {
     private char lastPlayer = ' ';

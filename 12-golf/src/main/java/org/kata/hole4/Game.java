@@ -1,7 +1,5 @@
 package org.kata.hole4;
 
-import org.kata.hole1.Board;
-
 public class Game {
     private char _lastSymbol = ' ';
     private Board board = new Board();
