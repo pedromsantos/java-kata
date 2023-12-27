@@ -79,6 +79,7 @@
         <module>9-marsrover</module>
         <module>10-tennis</module>
         <module>11-gilded</module>
+        <module>12-golf</module>
         <module>coverage</module>
     </modules>
 
