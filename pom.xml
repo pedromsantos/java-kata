@@ -80,6 +80,7 @@
         <module>10-tennis</module>
         <module>11-gilded</module>
         <module>12-golf</module>
+        <module>13-smelly</module>
         <module>coverage</module>
     </modules>
 
