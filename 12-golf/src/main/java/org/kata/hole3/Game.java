@@ -15,17 +15,9 @@ public class Game {
         updateBoard(symbol, x, y);
     }
 
-    private void updateBoard(char symbol, int x, int y) {
-        board.AddTileAt(symbol, x, y);
-    }
-
-    private void updatePlayer(char symbol) {
-        _lastSymbol = symbol;
-    }
-
-    private void validatePosition(int x, int y) throws Exception {
-        if (board.TileAt(x, y).Symbol != ' ') {
-            throw new Exception("Invalid position");
+    private void validateFirstMove(char symbol) throws Exception {
+        if (_lastSymbol == ' ' && symbol == 'O') {
+            throw new Exception("Invalid first player");
         }
     }
 
@@ -35,51 +27,42 @@ public class Game {
         }
     }
 
-    private void validateFirstMove(char symbol) throws Exception {
-        if (_lastSymbol == ' ' && symbol == 'O') {
-            throw new Exception("Invalid first player");
+    private void validatePosition(int x, int y) throws Exception {
+        if (board.TileAt(x, y).Symbol != ' ') {
+            throw new Exception("Invalid position");
         }
+    }
+    private void updatePlayer(char symbol) {
+        _lastSymbol = symbol;
+    }
+
+    private void updateBoard(char symbol, int x, int y) {
+        board.AddTileAt(symbol, x, y);
     }
 
     public char Winner() {
-        //if the positions in first row are taken
-        if (board.TileAt(0, 0).Symbol != ' ' &&
-                board.TileAt(0, 1).Symbol != ' ' &&
-                board.TileAt(0, 2).Symbol != ' ') {
-            //if first row is full with same symbol
-            if (board.TileAt(0, 0).Symbol ==
-                    board.TileAt(0, 1).Symbol &&
-                    board.TileAt(0, 2).Symbol == board.TileAt(0, 1).Symbol) {
-                return board.TileAt(0, 0).Symbol;
-            }
-        }
-
-        //if the positions in first row are taken
-        if (board.TileAt(1, 0).Symbol != ' ' &&
-                board.TileAt(1, 1).Symbol != ' ' &&
-                board.TileAt(1, 2).Symbol != ' ') {
-            //if middle row is full with same symbol
-            if (board.TileAt(1, 0).Symbol ==
-                    board.TileAt(1, 1).Symbol &&
-                    board.TileAt(1, 2).Symbol ==
-                            board.TileAt(1, 1).Symbol) {
-                return board.TileAt(1, 0).Symbol;
-            }
-        }
-
-        //if the positions in first row are taken
-        if (board.TileAt(2, 0).Symbol != ' ' &&
-                board.TileAt(2, 1).Symbol != ' ' &&
-                board.TileAt(2, 2).Symbol != ' ') {
-            //if middle row is full with same symbol
-            if (board.TileAt(2, 0).Symbol ==
-                    board.TileAt(2, 1).Symbol &&
-                    board.TileAt(2, 2).Symbol ==
-                            board.TileAt(2, 1).Symbol) {
-                return board.TileAt(2, 0).Symbol;
+        for(int row = 0; row < 3; row++) {
+            if (isRowFull(row)) {
+                char winnerOnRow = winnerOnRow(row);
+                if (winnerOnRow != ' ') return winnerOnRow;
             }
         }
 
         return ' ';
+    }
+
+    private char winnerOnRow(int x) {
+        if (board.TileAt(x, 0).Symbol ==
+                board.TileAt(x, 1).Symbol &&
+                board.TileAt(x, 2).Symbol == board.TileAt(x, 1).Symbol) {
+            return board.TileAt(x, 0).Symbol;
+        }
+        return ' ';
+    }
+
+    private boolean isRowFull(int x) {
+        return board.TileAt(x, 0).Symbol != ' ' &&
+                board.TileAt(x, 1).Symbol != ' ' &&
+                board.TileAt(x, 2).Symbol != ' ';
     }
 }

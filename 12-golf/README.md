@@ -79,11 +79,11 @@ TBD
   - Duplicated code
   - Long method
 - Reorder responsibilities
-  - Data class
-  - Message chain
   - Feature Envy
-  - Inappropriate Intimacy
+  - Message chain
+  - Data class
   - Large class
+  - Inappropriate Intimacy
 - Refine abstractions
   - Long parameter list
   - Data clump
