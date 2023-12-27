@@ -6,6 +6,10 @@ public class Game {
     private char _lastSymbol = ' ';
     private org.kata.hole1.Board board = new Board();
 
+    public char Winner() {
+        return board.rowHasSameSymbolOnAllColumns();
+    }
+
     public void play(char symbol, int x, int y) throws Exception {
         validateFirstMove(symbol);
         validatePlayer(symbol);
@@ -39,9 +43,4 @@ public class Game {
     private void updateBoard(char symbol, int x, int y) {
         board.AddTileAt(symbol, x, y);
     }
-
-    public char Winner() {
-        return board.rowHasSameSymbolOnAllColumns();
-    }
-
 }
