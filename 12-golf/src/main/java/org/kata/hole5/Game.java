@@ -25,8 +25,8 @@ public class Game {
         }
     }
 
-    private void validatePlayer(char symbol) throws Exception {
-        if (symbol == lastPlayer) {
+    private void validatePlayer(char player) throws Exception {
+        if (player == lastPlayer) {
             throw new Exception("Invalid next player");
         }
     }
