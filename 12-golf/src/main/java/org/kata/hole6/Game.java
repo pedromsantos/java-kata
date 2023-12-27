@@ -5,7 +5,7 @@ public class Game {
     private Board board = new Board();
 
     public char Winner() {
-        return board.rowHasSameSymbolOnAllColumns();
+        return board.anyRowHasSamePlayerOnAllColumns();
     }
 
     public void play(char player, int x, int y) throws Exception {

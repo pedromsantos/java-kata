@@ -5,7 +5,7 @@ import java.util.List;
 
 public class Board
 {
-    private List<Tile> _plays = new ArrayList<>();
+    private List<Tile> plays = new ArrayList<>();
 
     public Board()
     {
@@ -17,14 +17,14 @@ public class Board
                 tile.X = i;
                 tile.Y = j;
                 tile.Symbol = ' ';
-                _plays.add(tile);
+                plays.add(tile);
             }
         }
     }
 
     public Tile TileAt(int x, int y)
     {
-        for (Tile t : _plays) {
+        for (Tile t : plays) {
             if (t.X == x && t.Y == y){
                 return t;
             }
@@ -32,37 +32,31 @@ public class Board
         return null;
     }
 
-    public void AddTileAt(char symbol, int x, int y)
+    public void AddTileAt(char player, int x, int y)
     {
-        Tile newTile = new Tile();
-        newTile.X = x;
-        newTile.Y = y;
-        newTile.Symbol = symbol;
-
-        TileAt(x,y).Symbol = symbol;
+        TileAt(x,y).Symbol = player;
     }
 
-    public boolean isRowFull(int x) {
+    public char anyRowHasSamePlayerOnAllColumns() {
+        for(int row = 0; row < 3; row++) {
+            if (isRowFull(row)) {
+                return commonPlayerOnAllColumns(row);
+            }
+        }
+        return ' ';
+    }
+
+    private boolean isRowFull(int x) {
         return TileAt(x, 0).Symbol != ' ' &&
                 TileAt(x, 1).Symbol != ' ' &&
                 TileAt(x, 2).Symbol != ' ';
     }
 
-    public char winnerOnRow(int x) {
+    private char commonPlayerOnAllColumns(int x) {
         if (TileAt(x, 0).Symbol ==
                 TileAt(x, 1).Symbol &&
                 TileAt(x, 2).Symbol == TileAt(x, 1).Symbol) {
             return TileAt(x, 0).Symbol;
-        }
-        return ' ';
-    }
-
-    public char rowHasSameSymbolOnAllColumns() {
-        for(int row = 0; row < 3; row++) {
-            if (isRowFull(row)) {
-                char winnerOnRow = winnerOnRow(row);
-                if (winnerOnRow != ' ') return winnerOnRow;
-            }
         }
         return ' ';
     }
