@@ -13,11 +13,12 @@
         <module name="marsrover" />
         <module name="gilded" />
         <module name="roman" />
-        <module name="leapyear" />
         <module name="fizzbuzz" />
-        <module name="tictactoe" />
         <module name="yahtzee" />
         <module name="tennis" />
+        <module name="golf" />
+        <module name="leapyear" />
+        <module name="tictactoe" />
       </profile>
     </annotationProcessing>
   </component>
