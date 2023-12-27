@@ -1,4 +1,4 @@
-package org.kata.hole9;
+package org.kata.hole10;
 
 public class Game {
     private char lastPlayer = ' ';
@@ -8,14 +8,13 @@ public class Game {
         return board.anyRowHasSamePlayerOnAllColumns();
     }
 
-    public void play(char player, int x, int y) throws Exception {
-        Tile tile = new Tile(x, y, player);
+    public void play(Tile tile) throws Exception {
 
-        validateFirstMove(tile.getSymbol());
-        validatePlayer(tile.getSymbol());
+        validateFirstMove(tile.getPlayer());
+        validatePlayer(tile.getPlayer());
         validatePosition(tile);
 
-        updatePlayer(tile.getSymbol());
+        updatePlayer(tile.getPlayer());
         updateBoard(tile);
     }
 

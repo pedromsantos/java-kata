@@ -1,4 +1,4 @@
-package org.kata.hole8;
+package org.kata.hole10;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -30,7 +30,7 @@ public class Board
 
     public void AddTileAt(Tile tile)
     {
-        TileAt(tile).setSymbol(tile.getSymbol());
+        TileAt(tile).setPlayer(tile.getPlayer());
     }
 
     public char anyRowHasSamePlayerOnAllColumns() {
@@ -51,7 +51,7 @@ public class Board
     private char commonPlayerOnAllColumns(int row) {
         if (TileAt(new Tile(row, 0)).hasSameSymbolAs(TileAt(new Tile(row, 1))) &&
                 TileAt(new Tile(row, 2)).hasSameSymbolAs(TileAt(new Tile(row, 1)))) {
-            return TileAt(new Tile(row, 0)).getSymbol();
+            return TileAt(new Tile(row, 0)).getPlayer();
         }
         return ' ';
     }

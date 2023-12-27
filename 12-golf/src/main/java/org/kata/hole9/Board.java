@@ -30,7 +30,7 @@ public class Board
 
     public void AddTileAt(Tile tile)
     {
-        TileAt(tile).setSymbol(tile.getPlayer());
+        TileAt(tile).setSymbol(tile.getSymbol());
     }
 
     public char anyRowHasSamePlayerOnAllColumns() {

@@ -5,7 +5,6 @@ public class Tile
     private int X;
     private int Y;
     private char Symbol;
-    private char player;
 
     public Tile(int x, int y, char symbol) {
         X = x;
@@ -29,9 +28,5 @@ public class Tile
 
     public void setSymbol(char symbol) {
         Symbol = symbol;
-    }
-
-    public char getPlayer() {
-        return player;
     }
 }
