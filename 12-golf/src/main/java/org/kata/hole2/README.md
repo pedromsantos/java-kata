@@ -19,3 +19,4 @@ Remember to run the tests on each refactor and if green commit the changes
     7. Extract method `updateBoard` from `_board.AddTileAt(symbol, x, y);`
     8. Rename method `Play` to `play` following Java conventions for method names
     9. Rename instance variable `_board` to `board` following Java conventions for instance variable names
+    10. Reorder private methods by usage order

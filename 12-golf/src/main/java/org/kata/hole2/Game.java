@@ -15,17 +15,9 @@ public class Game {
         updateBoard(symbol, x, y);
     }
 
-    private void updateBoard(char symbol, int x, int y) {
-        board.AddTileAt(symbol, x, y);
-    }
-
-    private void updatePlayer(char symbol) {
-        _lastSymbol = symbol;
-    }
-
-    private void validatePosition(int x, int y) throws Exception {
-        if (board.TileAt(x, y).Symbol != ' ') {
-            throw new Exception("Invalid position");
+    private void validateFirstMove(char symbol) throws Exception {
+        if (_lastSymbol == ' ' && symbol == 'O') {
+            throw new Exception("Invalid first player");
         }
     }
 
@@ -35,10 +27,17 @@ public class Game {
         }
     }
 
-    private void validateFirstMove(char symbol) throws Exception {
-        if (_lastSymbol == ' ' && symbol == 'O') {
-            throw new Exception("Invalid first player");
+    private void validatePosition(int x, int y) throws Exception {
+        if (board.TileAt(x, y).Symbol != ' ') {
+            throw new Exception("Invalid position");
         }
+    }
+    private void updatePlayer(char symbol) {
+        _lastSymbol = symbol;
+    }
+
+    private void updateBoard(char symbol, int x, int y) {
+        board.AddTileAt(symbol, x, y);
     }
 
     public char Winner() {
