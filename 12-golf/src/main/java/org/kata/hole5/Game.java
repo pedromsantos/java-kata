@@ -3,30 +3,30 @@ package org.kata.hole5;
 import org.kata.hole1.Board;
 
 public class Game {
-    private char _lastSymbol = ' ';
-    private org.kata.hole1.Board board = new Board();
+    private char lastPlayer = ' ';
+    private Board board = new Board();
 
     public char Winner() {
         return board.rowHasSameSymbolOnAllColumns();
     }
 
-    public void play(char symbol, int x, int y) throws Exception {
-        validateFirstMove(symbol);
-        validatePlayer(symbol);
+    public void play(char player, int x, int y) throws Exception {
+        validateFirstMove(player);
+        validatePlayer(player);
         validatePosition(x, y);
 
-        updatePlayer(symbol);
-        updateBoard(symbol, x, y);
+        updatePlayer(player);
+        updateBoard(player, x, y);
     }
 
-    private void validateFirstMove(char symbol) throws Exception {
-        if (_lastSymbol == ' ' && symbol == 'O') {
+    private void validateFirstMove(char player) throws Exception {
+        if (lastPlayer == ' ' && player == 'O') {
             throw new Exception("Invalid first player");
         }
     }
 
     private void validatePlayer(char symbol) throws Exception {
-        if (symbol == _lastSymbol) {
+        if (symbol == lastPlayer) {
             throw new Exception("Invalid next player");
         }
     }
@@ -36,11 +36,11 @@ public class Game {
             throw new Exception("Invalid position");
         }
     }
-    private void updatePlayer(char symbol) {
-        _lastSymbol = symbol;
+    private void updatePlayer(char player) {
+        lastPlayer = player;
     }
 
-    private void updateBoard(char symbol, int x, int y) {
-        board.AddTileAt(symbol, x, y);
+    private void updateBoard(char player, int x, int y) {
+        board.AddTileAt(player, x, y);
     }
 }

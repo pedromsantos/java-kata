@@ -1,13 +1,11 @@
 package org.kata.hole5;
 
-import org.kata.hole1.Tile;
-
 import java.util.ArrayList;
 import java.util.List;
 
 public class Board
 {
-    private List<org.kata.hole1.Tile> _plays = new ArrayList<>();
+    private List<Tile> _plays = new ArrayList<>();
 
     public Board()
     {
@@ -15,7 +13,7 @@ public class Board
         {
             for (int j = 0; j < 3; j++)
             {
-                org.kata.hole1.Tile tile = new org.kata.hole1.Tile();
+                Tile tile = new Tile();
                 tile.X = i;
                 tile.Y = j;
                 tile.Symbol = ' ';
@@ -24,9 +22,9 @@ public class Board
         }
     }
 
-    public org.kata.hole1.Tile TileAt(int x, int y)
+    public Tile TileAt(int x, int y)
     {
-        for (org.kata.hole1.Tile t : _plays) {
+        for (Tile t : _plays) {
             if (t.X == x && t.Y == y){
                 return t;
             }
@@ -36,7 +34,7 @@ public class Board
 
     public void AddTileAt(char symbol, int x, int y)
     {
-        org.kata.hole1.Tile newTile = new Tile();
+        Tile newTile = new Tile();
         newTile.X = x;
         newTile.Y = y;
         newTile.Symbol = symbol;

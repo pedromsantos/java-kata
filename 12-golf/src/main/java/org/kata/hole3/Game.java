@@ -4,7 +4,7 @@ import org.kata.hole1.Board;
 
 public class Game {
     private char _lastSymbol = ' ';
-    private org.kata.hole1.Board board = new Board();
+    private Board board = new Board();
 
     public void play(char symbol, int x, int y) throws Exception {
         validateFirstMove(symbol);
