@@ -1,7 +1,7 @@
 package org.kata.hole12;
 
 public enum Row {
-    TOP_ROW(0), MIDDLE_ROW(1), BOTTOM_ROW(2);
+    TOP(0), CENTER(1), BOTTOM(2);
     private final int value;
 
     Row(int value) {

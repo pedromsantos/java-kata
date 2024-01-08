@@ -1,7 +1,7 @@
 package org.kata.hole12;
 
 public enum Column {
-    LEFT_COLUMN(0), MIDDLE_COLUMN(1), RIGHT_COLUMN(2);
+    LEFT(0), MIDDLE(1), RIGHT(2);
     private final int value;
 
     Column(int value) {

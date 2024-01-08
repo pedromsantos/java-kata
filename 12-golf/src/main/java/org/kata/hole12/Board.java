@@ -40,15 +40,15 @@ public class Board {
     }
 
     private boolean isRowFull(Row row) {
-        return TileAt(new Tile(row, LEFT_COLUMN)).isNotEmpty() &&
-                TileAt(new Tile(row, MIDDLE_COLUMN)).isNotEmpty() &&
-                TileAt(new Tile(row, RIGHT_COLUMN)).isNotEmpty();
+        return TileAt(new Tile(row, LEFT)).isNotEmpty() &&
+                TileAt(new Tile(row, MIDDLE)).isNotEmpty() &&
+                TileAt(new Tile(row, RIGHT)).isNotEmpty();
     }
 
     private char commonPlayerOnAllColumns(Row row) {
-        if (TileAt(new Tile(row, LEFT_COLUMN)).hasSamePlayerAs(TileAt(new Tile(row, MIDDLE_COLUMN))) &&
-                TileAt(new Tile(row, MIDDLE_COLUMN)).hasSamePlayerAs(TileAt(new Tile(row, RIGHT_COLUMN)))) {
-            return TileAt(new Tile(row, LEFT_COLUMN)).getPlayer();
+        if (TileAt(new Tile(row, LEFT)).hasSamePlayerAs(TileAt(new Tile(row, MIDDLE))) &&
+                TileAt(new Tile(row, MIDDLE)).hasSamePlayerAs(TileAt(new Tile(row, RIGHT)))) {
+            return TileAt(new Tile(row, LEFT)).getPlayer();
         }
         return ' ';
     }

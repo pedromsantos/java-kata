@@ -18,42 +18,42 @@ public class Game_Should {
 
     @Test
     public void NotAllowPlayerOToPlayFirst() {
-        assertThrows(Exception.class, () -> game.play(new Tile(TOP_ROW, LEFT_COLUMN, 'O')));
+        assertThrows(Exception.class, () -> game.play(new Tile(TOP, LEFT, 'O')));
     }
 
     @Test
     public void NotAllowPlayerXToPlayTwiceInARow() {
         assertThrows(Exception.class, () ->{
-            game.play(new Tile(TOP_ROW, LEFT_COLUMN, 'X'));
-            game.play(new Tile(MIDDLE_ROW, LEFT_COLUMN, 'X'));
+            game.play(new Tile(TOP, LEFT, 'X'));
+            game.play(new Tile(CENTER, LEFT, 'X'));
         });
     }
 
     @Test
     public void NotAllowPlayerToPlayInLastPlayedPosition() {
         assertThrows(Exception.class, () ->{
-            game.play(new Tile(TOP_ROW, LEFT_COLUMN, 'X'));
-            game.play(new Tile(TOP_ROW, LEFT_COLUMN, 'O'));
+            game.play(new Tile(TOP, LEFT, 'X'));
+            game.play(new Tile(TOP, LEFT, 'O'));
         });
     }
 
     @Test
     public void NotAllowPlayerToPlayInAnyPlayedPosition() {
         assertThrows(Exception.class, () ->{
-            game.play(new Tile(TOP_ROW, LEFT_COLUMN, 'X'));
-            game.play(new Tile(MIDDLE_ROW, LEFT_COLUMN, 'O'));
-            game.play(new Tile(TOP_ROW, LEFT_COLUMN, 'X'));
+            game.play(new Tile(TOP, LEFT, 'X'));
+            game.play(new Tile(CENTER, LEFT, 'O'));
+            game.play(new Tile(TOP, LEFT, 'X'));
         });
     }
 
     @Test
     public void DeclarePlayerXAsAWinnerIfThreeInTopRow() throws Exception
     {
-        game.play(new Tile(TOP_ROW, LEFT_COLUMN, 'X'));
-        game.play(new Tile(MIDDLE_ROW, LEFT_COLUMN, 'O'));
-        game.play(new Tile(TOP_ROW, MIDDLE_COLUMN, 'X'));
-        game.play(new Tile(MIDDLE_ROW, MIDDLE_COLUMN, 'O'));
-        game.play(new Tile(TOP_ROW, RIGHT_COLUMN, 'X'));
+        game.play(new Tile(TOP, LEFT, 'X'));
+        game.play(new Tile(CENTER, LEFT, 'O'));
+        game.play(new Tile(TOP, Column.MIDDLE, 'X'));
+        game.play(new Tile(CENTER, Column.MIDDLE, 'O'));
+        game.play(new Tile(TOP, RIGHT, 'X'));
 
         char winner = game.Winner();
 
@@ -63,12 +63,12 @@ public class Game_Should {
     @Test
     public void DeclarePlayerOAsAWinnerIfThreeInTopRow() throws Exception
     {
-        game.play(new Tile(BOTTOM_ROW, RIGHT_COLUMN, 'X'));
-        game.play(new Tile(TOP_ROW, LEFT_COLUMN, 'O'));
-        game.play(new Tile(MIDDLE_ROW, LEFT_COLUMN, 'X'));
-        game.play(new Tile(TOP_ROW, MIDDLE_COLUMN, 'O'));
-        game.play(new Tile(MIDDLE_ROW, MIDDLE_COLUMN, 'X'));
-        game.play(new Tile(TOP_ROW, RIGHT_COLUMN, 'O'));
+        game.play(new Tile(BOTTOM, RIGHT, 'X'));
+        game.play(new Tile(TOP, LEFT, 'O'));
+        game.play(new Tile(CENTER, LEFT, 'X'));
+        game.play(new Tile(TOP, Column.MIDDLE, 'O'));
+        game.play(new Tile(CENTER, Column.MIDDLE, 'X'));
+        game.play(new Tile(TOP, RIGHT, 'O'));
 
         char winner = game.Winner();
 
@@ -78,11 +78,11 @@ public class Game_Should {
     @Test
     public void DeclarePlayerXAsAWinnerIfThreeInMiddleRow() throws Exception
     {
-        game.play(new Tile(MIDDLE_ROW, LEFT_COLUMN, 'X'));
-        game.play(new Tile(TOP_ROW, LEFT_COLUMN, 'O'));
-        game.play(new Tile(MIDDLE_ROW, MIDDLE_COLUMN, 'X'));
-        game.play(new Tile(TOP_ROW, MIDDLE_COLUMN, 'O'));
-        game.play(new Tile(MIDDLE_ROW, RIGHT_COLUMN, 'X'));
+        game.play(new Tile(CENTER, LEFT, 'X'));
+        game.play(new Tile(TOP, LEFT, 'O'));
+        game.play(new Tile(CENTER, Column.MIDDLE, 'X'));
+        game.play(new Tile(TOP, Column.MIDDLE, 'O'));
+        game.play(new Tile(CENTER, RIGHT, 'X'));
 
         char winner = game.Winner();
 
@@ -92,12 +92,12 @@ public class Game_Should {
     @Test
     public void DeclarePlayerOAsAWinnerIfThreeInMiddleRow() throws Exception
     {
-        game.play(new Tile(TOP_ROW, LEFT_COLUMN, 'X'));
-        game.play(new Tile(MIDDLE_ROW, LEFT_COLUMN, 'O'));
-        game.play(new Tile(BOTTOM_ROW, LEFT_COLUMN, 'X'));
-        game.play(new Tile(MIDDLE_ROW, MIDDLE_COLUMN, 'O'));
-        game.play(new Tile(BOTTOM_ROW, MIDDLE_COLUMN, 'X'));
-        game.play(new Tile(MIDDLE_ROW, RIGHT_COLUMN, 'O'));
+        game.play(new Tile(TOP, LEFT, 'X'));
+        game.play(new Tile(CENTER, LEFT, 'O'));
+        game.play(new Tile(BOTTOM, LEFT, 'X'));
+        game.play(new Tile(CENTER, Column.MIDDLE, 'O'));
+        game.play(new Tile(BOTTOM, Column.MIDDLE, 'X'));
+        game.play(new Tile(CENTER, RIGHT, 'O'));
 
         char winner = game.Winner();
 
@@ -107,11 +107,11 @@ public class Game_Should {
     @Test
     public void DeclarePlayerXAsAWinnerIfThreeInBottomRow() throws Exception
     {
-        game.play(new Tile(BOTTOM_ROW, LEFT_COLUMN, 'X'));
-        game.play(new Tile(TOP_ROW, LEFT_COLUMN, 'O'));
-        game.play(new Tile(BOTTOM_ROW, MIDDLE_COLUMN, 'X'));
-        game.play(new Tile(TOP_ROW, MIDDLE_COLUMN, 'O'));
-        game.play(new Tile(BOTTOM_ROW, RIGHT_COLUMN, 'X'));
+        game.play(new Tile(BOTTOM, LEFT, 'X'));
+        game.play(new Tile(TOP, LEFT, 'O'));
+        game.play(new Tile(BOTTOM, Column.MIDDLE, 'X'));
+        game.play(new Tile(TOP, Column.MIDDLE, 'O'));
+        game.play(new Tile(BOTTOM, RIGHT, 'X'));
 
         char winner = game.Winner();
 
@@ -121,12 +121,12 @@ public class Game_Should {
     @Test
     public void DeclarePlayerOAsAWinnerIfThreeInBottomRow() throws Exception
     {
-        game.play(new Tile(TOP_ROW, LEFT_COLUMN, 'X'));
-        game.play(new Tile(BOTTOM_ROW, LEFT_COLUMN, 'O'));
-        game.play(new Tile(MIDDLE_ROW, LEFT_COLUMN, 'X'));
-        game.play(new Tile(BOTTOM_ROW, MIDDLE_COLUMN, 'O'));
-        game.play(new Tile(MIDDLE_ROW, MIDDLE_COLUMN, 'X'));
-        game.play(new Tile(BOTTOM_ROW, RIGHT_COLUMN, 'O'));
+        game.play(new Tile(TOP, LEFT, 'X'));
+        game.play(new Tile(BOTTOM, LEFT, 'O'));
+        game.play(new Tile(CENTER, LEFT, 'X'));
+        game.play(new Tile(BOTTOM, Column.MIDDLE, 'O'));
+        game.play(new Tile(CENTER, Column.MIDDLE, 'X'));
+        game.play(new Tile(BOTTOM, RIGHT, 'O'));
 
         char winner = game.Winner();
 
