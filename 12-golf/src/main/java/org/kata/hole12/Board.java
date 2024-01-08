@@ -5,15 +5,20 @@ import java.util.List;
 
 public class Board {
     private static final int TOP_ROW = 0;
+    private static final int MIDDLE_ROW = 1;
     private static final int BOTTOM_ROW = 2;
     private static final int LEFT_COLUMN = 0;
     private static final int MIDDLE_COLUMN = 1;
     private static final int RIGHT_COLUMN = 2;
+
+    private static int[] rows = {TOP_ROW, MIDDLE_ROW, BOTTOM_ROW};
+    private static int[] columns = {LEFT_COLUMN, MIDDLE_COLUMN, RIGHT_COLUMN};
+
     private final List<Tile> plays = new ArrayList<>();
 
     public Board() {
-        for (int row = TOP_ROW; row <= BOTTOM_ROW; row++) {
-            for (int column = LEFT_COLUMN; column <= RIGHT_COLUMN; column++) {
+        for (int row : rows) {
+            for (int column : columns) {
                 plays.add(new Tile(row, column));
             }
         }
@@ -33,7 +38,7 @@ public class Board {
     }
 
     public char anyRowHasSamePlayerOnAllColumns() {
-        for (int row = TOP_ROW; row <= BOTTOM_ROW; row++) {
+        for (int row: rows) {
             if (isRowFull(row)) {
                 return commonPlayerOnAllColumns(row);
             }
