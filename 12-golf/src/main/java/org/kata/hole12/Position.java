@@ -3,10 +3,10 @@ package org.kata.hole12;
 import java.util.Objects;
 
 public class Position {
-    private final int x;
-    private final int y;
+    private final Row x;
+    private final Column y;
 
-    public Position(int x, int y) {
+    public Position(Row x, Column y) {
         this.x = x;
         this.y = y;
     }

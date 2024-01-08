@@ -4,12 +4,12 @@ public class Tile {
     private final Position position;
     private char player;
 
-    public Tile(int x, int y, char player) {
+    public Tile(Row x, Column y, char player) {
         this.position = new Position(x, y);
         this.player = player;
     }
 
-    public Tile(int x, int y) {
+    public Tile(Row x, Column y) {
         this(x, y, ' ');
     }
 

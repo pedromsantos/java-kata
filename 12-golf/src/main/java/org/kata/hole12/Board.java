@@ -3,22 +3,15 @@ package org.kata.hole12;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Board {
-    private static final int TOP_ROW = 0;
-    private static final int MIDDLE_ROW = 1;
-    private static final int BOTTOM_ROW = 2;
-    private static final int LEFT_COLUMN = 0;
-    private static final int MIDDLE_COLUMN = 1;
-    private static final int RIGHT_COLUMN = 2;
+import static org.kata.hole12.Column.*;
 
-    private static int[] rows = {TOP_ROW, MIDDLE_ROW, BOTTOM_ROW};
-    private static int[] columns = {LEFT_COLUMN, MIDDLE_COLUMN, RIGHT_COLUMN};
+public class Board {
 
     private final List<Tile> plays = new ArrayList<>();
 
     public Board() {
-        for (int row : rows) {
-            for (int column : columns) {
+        for (Row row : Row.values()) {
+            for (Column column : Column.values()) {
                 plays.add(new Tile(row, column));
             }
         }
@@ -38,7 +31,7 @@ public class Board {
     }
 
     public char anyRowHasSamePlayerOnAllColumns() {
-        for (int row: rows) {
+        for (Row row: Row.values()) {
             if (isRowFull(row)) {
                 return commonPlayerOnAllColumns(row);
             }
@@ -46,13 +39,13 @@ public class Board {
         return ' ';
     }
 
-    private boolean isRowFull(int row) {
+    private boolean isRowFull(Row row) {
         return TileAt(new Tile(row, LEFT_COLUMN)).isNotEmpty() &&
                 TileAt(new Tile(row, MIDDLE_COLUMN)).isNotEmpty() &&
                 TileAt(new Tile(row, RIGHT_COLUMN)).isNotEmpty();
     }
 
-    private char commonPlayerOnAllColumns(int row) {
+    private char commonPlayerOnAllColumns(Row row) {
         if (TileAt(new Tile(row, LEFT_COLUMN)).hasSamePlayerAs(TileAt(new Tile(row, MIDDLE_COLUMN))) &&
                 TileAt(new Tile(row, MIDDLE_COLUMN)).hasSamePlayerAs(TileAt(new Tile(row, RIGHT_COLUMN)))) {
             return TileAt(new Tile(row, LEFT_COLUMN)).getPlayer();
