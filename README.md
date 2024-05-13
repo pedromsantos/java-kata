@@ -9,6 +9,7 @@ book [Agile Technical Practices Distilled](https://leanpub.com/agiletechnicalpra
 
 ```sh
 mvn compile
+mvn clean install -T 1C
 ```
 
 ### Execute tests
