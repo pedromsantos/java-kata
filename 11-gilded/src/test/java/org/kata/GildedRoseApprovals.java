@@ -4,7 +4,7 @@ import org.approvaltests.combinations.CombinationApprovals;
 import org.junit.jupiter.api.Test;
 import org.lambda.functions.Function3;
 
-public class GildedRoseApprovals {
+class GildedRoseApprovals {
 
 	Function3<String, Integer, Integer, String> doUpdateQuality = (name, sellIn, quality) -> {
 		GildedRose app = new GildedRose(new Item[]{new Item(name, sellIn, quality)});

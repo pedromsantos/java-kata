@@ -65,7 +65,7 @@ public class TennisTest {
 
     @ParameterizedTest
     @MethodSource("getAllScores")
-    public void checkAllScoresTennisGame1(int player1Points, int player2Points, String expectedScore) {
+    void checkAllScoresTennisGame1(int player1Points, int player2Points, String expectedScore) {
         TennisGame game = new org.kata.TennisGame1("player1", "player2");
         checkAllScores(player1Points, player2Points, expectedScore, game);
     }

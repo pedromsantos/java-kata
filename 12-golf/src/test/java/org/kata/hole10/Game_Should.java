@@ -6,7 +6,7 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
-public class Game_Should {
+class Game_Should {
     private Game game;
 
     @BeforeEach
@@ -15,12 +15,12 @@ public class Game_Should {
     }
 
     @Test
-    public void NotAllowPlayerOToPlayFirst() {
+    void NotAllowPlayerOToPlayFirst() {
         assertThrows(Exception.class, () -> game.play(new Tile(0, 0, 'O')));
     }
 
     @Test
-    public void NotAllowPlayerXToPlayTwiceInARow() {
+    void NotAllowPlayerXToPlayTwiceInARow() {
         assertThrows(Exception.class, () ->{
             game.play(new Tile(0, 0, 'X'));
             game.play(new Tile(1, 0, 'X'));
@@ -28,7 +28,7 @@ public class Game_Should {
     }
 
     @Test
-    public void NotAllowPlayerToPlayInLastPlayedPosition() {
+    void NotAllowPlayerToPlayInLastPlayedPosition() {
         assertThrows(Exception.class, () ->{
             game.play(new Tile(0, 0, 'X'));
             game.play(new Tile(0, 0, 'O'));
@@ -36,7 +36,7 @@ public class Game_Should {
     }
 
     @Test
-    public void NotAllowPlayerToPlayInAnyPlayedPosition() {
+    void NotAllowPlayerToPlayInAnyPlayedPosition() {
         assertThrows(Exception.class, () ->{
             game.play(new Tile(0, 0, 'X'));
             game.play(new Tile(1, 0, 'O'));
@@ -45,7 +45,7 @@ public class Game_Should {
     }
 
     @Test
-    public void DeclarePlayerXAsAWinnerIfThreeInTopRow() throws Exception
+    void DeclarePlayerXAsAWinnerIfThreeInTopRow() throws Exception
     {
         game.play(new Tile(0, 0, 'X'));
         game.play(new Tile(1, 0, 'O'));
@@ -59,7 +59,7 @@ public class Game_Should {
     }
 
     @Test
-    public void DeclarePlayerOAsAWinnerIfThreeInTopRow() throws Exception
+    void DeclarePlayerOAsAWinnerIfThreeInTopRow() throws Exception
     {
         game.play(new Tile(2, 2, 'X'));
         game.play(new Tile(0, 0, 'O'));
@@ -74,7 +74,7 @@ public class Game_Should {
     }
 
     @Test
-    public void DeclarePlayerXAsAWinnerIfThreeInMiddleRow() throws Exception
+    void DeclarePlayerXAsAWinnerIfThreeInMiddleRow() throws Exception
     {
         game.play(new Tile(1, 0, 'X'));
         game.play(new Tile(0, 0, 'O'));
@@ -88,7 +88,7 @@ public class Game_Should {
     }
 
     @Test
-    public void DeclarePlayerOAsAWinnerIfThreeInMiddleRow() throws Exception
+    void DeclarePlayerOAsAWinnerIfThreeInMiddleRow() throws Exception
     {
         game.play(new Tile(0, 0, 'X'));
         game.play(new Tile(1, 0, 'O'));
@@ -103,7 +103,7 @@ public class Game_Should {
     }
 
     @Test
-    public void DeclarePlayerXAsAWinnerIfThreeInBottomRow() throws Exception
+    void DeclarePlayerXAsAWinnerIfThreeInBottomRow() throws Exception
     {
         game.play(new Tile(2, 0, 'X'));
         game.play(new Tile(0, 0, 'O'));
@@ -117,7 +117,7 @@ public class Game_Should {
     }
 
     @Test
-    public void DeclarePlayerOAsAWinnerIfThreeInBottomRow() throws Exception
+    void DeclarePlayerOAsAWinnerIfThreeInBottomRow() throws Exception
     {
         game.play(new Tile(0, 0, 'X'));
         game.play(new Tile(2, 0, 'O'));

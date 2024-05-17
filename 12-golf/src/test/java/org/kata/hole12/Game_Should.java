@@ -8,7 +8,7 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.kata.hole12.Column.*;
 import static org.kata.hole12.Row.*;
 
-public class Game_Should {
+class Game_Should {
     private Game game;
 
     @BeforeEach
@@ -17,12 +17,12 @@ public class Game_Should {
     }
 
     @Test
-    public void NotAllowPlayerOToPlayFirst() {
+    void NotAllowPlayerOToPlayFirst() {
         assertThrows(Exception.class, () -> game.play(new Tile(TOP, LEFT, 'O')));
     }
 
     @Test
-    public void NotAllowPlayerXToPlayTwiceInARow() {
+    void NotAllowPlayerXToPlayTwiceInARow() {
         assertThrows(Exception.class, () ->{
             game.play(new Tile(TOP, LEFT, 'X'));
             game.play(new Tile(CENTER, LEFT, 'X'));
@@ -30,7 +30,7 @@ public class Game_Should {
     }
 
     @Test
-    public void NotAllowPlayerToPlayInLastPlayedPosition() {
+    void NotAllowPlayerToPlayInLastPlayedPosition() {
         assertThrows(Exception.class, () ->{
             game.play(new Tile(TOP, LEFT, 'X'));
             game.play(new Tile(TOP, LEFT, 'O'));
@@ -38,7 +38,7 @@ public class Game_Should {
     }
 
     @Test
-    public void NotAllowPlayerToPlayInAnyPlayedPosition() {
+    void NotAllowPlayerToPlayInAnyPlayedPosition() {
         assertThrows(Exception.class, () ->{
             game.play(new Tile(TOP, LEFT, 'X'));
             game.play(new Tile(CENTER, LEFT, 'O'));
@@ -47,7 +47,7 @@ public class Game_Should {
     }
 
     @Test
-    public void DeclarePlayerXAsAWinnerIfThreeInTopRow() throws Exception
+    void DeclarePlayerXAsAWinnerIfThreeInTopRow() throws Exception
     {
         game.play(new Tile(TOP, LEFT, 'X'));
         game.play(new Tile(CENTER, LEFT, 'O'));
@@ -61,7 +61,7 @@ public class Game_Should {
     }
 
     @Test
-    public void DeclarePlayerOAsAWinnerIfThreeInTopRow() throws Exception
+    void DeclarePlayerOAsAWinnerIfThreeInTopRow() throws Exception
     {
         game.play(new Tile(BOTTOM, RIGHT, 'X'));
         game.play(new Tile(TOP, LEFT, 'O'));
@@ -76,7 +76,7 @@ public class Game_Should {
     }
 
     @Test
-    public void DeclarePlayerXAsAWinnerIfThreeInMiddleRow() throws Exception
+    void DeclarePlayerXAsAWinnerIfThreeInMiddleRow() throws Exception
     {
         game.play(new Tile(CENTER, LEFT, 'X'));
         game.play(new Tile(TOP, LEFT, 'O'));
@@ -90,7 +90,7 @@ public class Game_Should {
     }
 
     @Test
-    public void DeclarePlayerOAsAWinnerIfThreeInMiddleRow() throws Exception
+    void DeclarePlayerOAsAWinnerIfThreeInMiddleRow() throws Exception
     {
         game.play(new Tile(TOP, LEFT, 'X'));
         game.play(new Tile(CENTER, LEFT, 'O'));
@@ -105,7 +105,7 @@ public class Game_Should {
     }
 
     @Test
-    public void DeclarePlayerXAsAWinnerIfThreeInBottomRow() throws Exception
+    void DeclarePlayerXAsAWinnerIfThreeInBottomRow() throws Exception
     {
         game.play(new Tile(BOTTOM, LEFT, 'X'));
         game.play(new Tile(TOP, LEFT, 'O'));
@@ -119,7 +119,7 @@ public class Game_Should {
     }
 
     @Test
-    public void DeclarePlayerOAsAWinnerIfThreeInBottomRow() throws Exception
+    void DeclarePlayerOAsAWinnerIfThreeInBottomRow() throws Exception
     {
         game.play(new Tile(TOP, LEFT, 'X'));
         game.play(new Tile(BOTTOM, LEFT, 'O'));

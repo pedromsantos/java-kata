@@ -6,7 +6,7 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
-public class Game_Should {
+class Game_Should {
     private Game game;
 
     @BeforeEach
@@ -15,12 +15,12 @@ public class Game_Should {
     }
 
     @Test
-    public void NotAllowPlayerOToPlayFirst() {
+    void NotAllowPlayerOToPlayFirst() {
         assertThrows(Exception.class, () -> game.Play('O', 0, 0));
     }
 
     @Test
-    public void NotAllowPlayerXToPlayTwiceInARow() {
+    void NotAllowPlayerXToPlayTwiceInARow() {
         assertThrows(Exception.class, () ->{
             game.Play('X', 0, 0);
             game.Play('X', 1, 0);
@@ -28,7 +28,7 @@ public class Game_Should {
     }
 
     @Test
-    public void NotAllowPlayerToPlayInLastPlayedPosition() {
+    void NotAllowPlayerToPlayInLastPlayedPosition() {
         assertThrows(Exception.class, () ->{
             game.Play('X', 0, 0);
             game.Play('O', 0, 0);
@@ -36,7 +36,7 @@ public class Game_Should {
     }
 
     @Test
-    public void NotAllowPlayerToPlayInAnyPlayedPosition() {
+    void NotAllowPlayerToPlayInAnyPlayedPosition() {
         assertThrows(Exception.class, () ->{
             game.Play('X', 0, 0);
             game.Play('O', 1, 0);
@@ -45,7 +45,7 @@ public class Game_Should {
     }
 
     @Test
-    public void DeclarePlayerXAsAWinnerIfThreeInTopRow() throws Exception
+    void DeclarePlayerXAsAWinnerIfThreeInTopRow() throws Exception
     {
         game.Play('X', 0, 0);
         game.Play('O', 1, 0);
@@ -59,7 +59,7 @@ public class Game_Should {
     }
 
     @Test
-    public void DeclarePlayerOAsAWinnerIfThreeInTopRow() throws Exception
+    void DeclarePlayerOAsAWinnerIfThreeInTopRow() throws Exception
     {
         game.Play('X', 2, 2);
         game.Play('O', 0, 0);
@@ -74,7 +74,7 @@ public class Game_Should {
     }
 
     @Test
-    public void DeclarePlayerXAsAWinnerIfThreeInMiddleRow() throws Exception
+    void DeclarePlayerXAsAWinnerIfThreeInMiddleRow() throws Exception
     {
         game.Play('X', 1, 0);
         game.Play('O', 0, 0);
@@ -88,7 +88,7 @@ public class Game_Should {
     }
 
     @Test
-    public void DeclarePlayerOAsAWinnerIfThreeInMiddleRow() throws Exception
+    void DeclarePlayerOAsAWinnerIfThreeInMiddleRow() throws Exception
     {
         game.Play('X', 0, 0);
         game.Play('O', 1, 0);
@@ -103,7 +103,7 @@ public class Game_Should {
     }
 
     @Test
-    public void DeclarePlayerXAsAWinnerIfThreeInBottomRow() throws Exception
+    void DeclarePlayerXAsAWinnerIfThreeInBottomRow() throws Exception
     {
         game.Play('X', 2, 0);
         game.Play('O', 0, 0);
@@ -117,7 +117,7 @@ public class Game_Should {
     }
 
     @Test
-    public void DeclarePlayerOAsAWinnerIfThreeInBottomRow() throws Exception
+    void DeclarePlayerOAsAWinnerIfThreeInBottomRow() throws Exception
     {
         game.Play('X', 0, 0);
         game.Play('O', 2, 0);
