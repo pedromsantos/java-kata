@@ -87,6 +87,7 @@
         <module>12-golf</module>
         <module>13-smelly</module>
         <module>coverage</module>
+        <module>14-character-copier</module>
     </modules>
 
 </project>

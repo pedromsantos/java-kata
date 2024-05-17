@@ -15,6 +15,7 @@
         <module name="gilded" />
         <module name="roman" />
         <module name="fizzbuzz" />
+        <module name="CharacterCopierTest" />
         <module name="yahtzee" />
         <module name="tennis" />
         <module name="golf" />
