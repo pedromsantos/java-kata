@@ -10,10 +10,10 @@ This plateau, must be navigated by the rover so that it´s on-board cameras can 
 
 - The rover receives three lines of input:
   - The first line defines the upper-right coordinates of the plateau.
-    - Example: ‘5 5’
+    - Example: ‘5:5’
     - The lower-left coordinates are always ‘0 0’.
   - The second line contains the rover’s starting position and direction.
-    - Example ‘1 2 N’ measn x=1, y=2 and Direction=North
+    - Example ‘1:2:N’ measn x=1, y=2 and Direction=North
     - Assume that the square directly North from (x, y) is (x, y+1).
   - The third line contains the sequence of commands to execute.
     - Example: ‘LMLMLMLMM’
@@ -23,8 +23,8 @@ This plateau, must be navigated by the rover so that it´s on-board cameras can 
 ### Example input
 
 ```text
-5 5
-1 2 N
+5:5
+1:2:N
 MLMLMLMM
 ```
 
@@ -32,10 +32,18 @@ Assume that NASA will never send invalid messages to the rover, nor will it send
 
 ## Output
 
-The output for the rover should be its final co-ordinates and heading.
+The output for the rover should be its final co-ordinates and heading and the list of execute commands whith the final coordinates after executing each command
 
 ```text
-1 3 N
+1:3:N
+M 2:3:N
+L 2:3:E
+M 3:2:N
+L
+M
+L
+M
+M
 ```
 
 ## Examples
@@ -43,29 +51,29 @@ The output for the rover should be its final co-ordinates and heading.
 ### Input 1
 
 ```text
-5 5
-1 2 N
+5:5
+1:2:N
 LMLMLMLMM
 ```
 
 ### Expected Output 1
 
 ```text
-1 3 N
+1:3:N
 ```
 
 ### Input 2
 
 ```text
-5 5
-3 3 E
+5:5
+3:3:E
 MMRMMRMRRM
 ```
 
 ### Expected Output 2
 
 ```text
-5 1 E
+5:1:E
 ```
 
 ## First run
@@ -82,7 +90,7 @@ There are 2 acceptance tests to get you started. Treat them as an automated "def
 
 ```typescript
 const rover = new Rover();
-const finalPosition = rover.execute('5 5\n1 2 N\nLMLMLMLMM');
+const finalPosition = rover.execute('5:5\n1:2:N\nLMLMLMLMM');
 ```
 
 ## Second run
