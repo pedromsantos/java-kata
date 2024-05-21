@@ -7,6 +7,6 @@ import static org.assertj.core.api.Assertions.assertThat;
 class ESARoverTest {
     @Test
     void true_is_true() {
-        assertThat(true).isEqualTo(true);
+        assertThat(true).isTrue();
     }
 }
