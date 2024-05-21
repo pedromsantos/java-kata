@@ -47,7 +47,7 @@ public class Game
     // ...
   }
 
-  protected virtual int roll()
+  protected virtual Int roll()
   {
       Random random = new Random();
       int diceResult = random.nextInt(6) + 1;
@@ -67,7 +67,7 @@ public class TestableGame extends Game {
     }
 
     @Override
-    protected int roll() {
+    protected Int roll() {
         return this.roll;
     }
 }
