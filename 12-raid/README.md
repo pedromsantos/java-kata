@@ -22,7 +22,7 @@ In the following example, we will see one application of the seam model to some 
 
 _Example:_
 
-```csharp
+```java
 public class Game {
     public void play() {
         Random random = new Random();
@@ -37,19 +37,20 @@ In this case, the Game class is coupled with the random number generator library
 **Step 1:** Add a protected virtual method to the Game class to encapsulate the behavior that has the Coupling issue.
 Use a protected method to avoid extending the public interface of the Game class.
 
-```csharp
+```java
 
 public class Game
 {
-  public void Play()
+  public void play()
   {
     var diceResult = roll();
-    ...
+    // ...
   }
 
-  protected virtual int Roll()
+  protected virtual int roll()
   {
-    return new Random().Next(1, 6);
+      Random random = new Random();
+      int diceResult = random.nextInt(6) + 1;
   }
 }
 
