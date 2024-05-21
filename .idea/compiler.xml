@@ -12,16 +12,21 @@
         <module name="primes" />
         <module name="marsrover" />
         <module name="smelly" />
+        <module name="esa-mars-rover" />
         <module name="gilded" />
         <module name="roman" />
+        <module name="chareacter_copier" />
         <module name="fizzbuzz" />
-        <module name="CharacterCopierTest" />
         <module name="yahtzee" />
         <module name="tennis" />
         <module name="golf" />
         <module name="leapyear" />
         <module name="tictactoe" />
+        <module name="raid" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="CharacterCopierTest" target="17" />
+    </bytecodeTargetLevel>
   </component>
 </project>

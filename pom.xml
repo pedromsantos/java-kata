@@ -84,10 +84,12 @@
         <module>9-marsrover</module>
         <module>10-tennis</module>
         <module>11-gilded</module>
-        <module>12-golf</module>
-        <module>13-smelly</module>
+        <module>12-raid</module>
+        <module>13-golf</module>
+        <module>14-smelly</module>
+        <module>15-character-copier</module>
+        <module>16-esa-mars-rover</module>
         <module>coverage</module>
-        <module>14-character-copier</module>
     </modules>
 
 </project>
