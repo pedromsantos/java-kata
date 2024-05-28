@@ -8,18 +8,17 @@ book [Agile Technical Practices Distilled](https://leanpub.com/agiletechnicalpra
 ### Build solution
 
 ```sh
-mvn compile
 mvn clean install -T 1C
 ```
 
 ### Execute tests
 
 ```sh
-mvn test
+mvn clean install -T 1C
 ```
 
 ### Coverage reports
 
 ```sh
-[module]/target/site/jacoco/index.html
+./coverage/target/site/jacoco-aggregate/index.html
 ```
