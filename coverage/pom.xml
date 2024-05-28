@@ -73,7 +73,7 @@
         </dependency>
         <dependency>
             <groupId>com.github.pedromsantos</groupId>
-            <artifactId>gilded</artifactId>
+            <artifactId>gilded-rose</artifactId>
             <version>1.0-0</version>
         </dependency>
         <dependency>
