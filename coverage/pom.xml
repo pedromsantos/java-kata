@@ -28,7 +28,7 @@
         </dependency>
         <dependency>
             <groupId>com.github.pedromsantos</groupId>
-            <artifactId>leapyear</artifactId>
+            <artifactId>leap-year</artifactId>
             <version>1.0-0</version>
         </dependency>
         <dependency>
@@ -53,7 +53,7 @@
         </dependency>
         <dependency>
             <groupId>com.github.pedromsantos</groupId>
-            <artifactId>tictactoe</artifactId>
+            <artifactId>tic-tac-toe</artifactId>
             <version>1.0-0</version>
         </dependency>
         <dependency>

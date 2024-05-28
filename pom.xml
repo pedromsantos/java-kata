@@ -74,14 +74,14 @@
 
     <modules>
         <module>1-fizzbuzz</module>
-        <module>2-leapyear</module>
+        <module>2-leap-year</module>
         <module>3-fibonacci</module>
         <module>4-stack</module>
         <module>5-roman</module>
         <module>6-primes</module>
-        <module>7-tictactoe</module>
+        <module>7-tic-tac-toe</module>
         <module>8-yahtzee</module>
-        <module>9-marsrover</module>
+        <module>9-mars-rover</module>
         <module>10-tennis</module>
         <module>11-gilded</module>
         <module>12-raid</module>

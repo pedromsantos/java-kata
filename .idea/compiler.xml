@@ -8,6 +8,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="coverage" />
         <module name="fibonacci" />
+        <module name="leap-year" />
         <module name="stack" />
         <module name="primes" />
         <module name="marsrover" />
@@ -20,8 +21,7 @@
         <module name="yahtzee" />
         <module name="tennis" />
         <module name="golf" />
-        <module name="leapyear" />
-        <module name="tictactoe" />
+        <module name="tic-tac-toe" />
         <module name="raid" />
       </profile>
     </annotationProcessing>
