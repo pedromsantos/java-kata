@@ -5,13 +5,7 @@ book [Agile Technical Practices Distilled](https://leanpub.com/agiletechnicalpra
 
 ## Instructions
 
-### Build solution
-
-```sh
-mvn clean install -T 1C
-```
-
-### Execute tests
+### Build solution and execute tests
 
 ```sh
 mvn clean install -T 1C
