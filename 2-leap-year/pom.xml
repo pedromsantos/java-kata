@@ -11,10 +11,10 @@
         <artifactId>java-kata</artifactId>
     </parent>
 
-    <artifactId>tictactoe</artifactId>
+    <artifactId>leap-year</artifactId>
     <version>1.0-0</version>
 
-    <name>Tic Tac Toe</name>
+    <name>Leap Year</name>
     <description>
         Details on README.md
     </description>
