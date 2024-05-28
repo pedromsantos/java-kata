@@ -17,9 +17,11 @@ Refactor the code to improve its readability.
 #### Before you start
 
 - Make sure the tests have a good coverage
+
   - Use a code coverage tool to make sure code coverage by tests is very high
   - For this exercise code coverage is high (100%)
-    - Run the tests with your IDE coverage tool and check for yourself
+    - Run the tests using `mvn clean install` on your terminal and check for yourself
+      - <http://127.0.0.1:3000/coverage/target/site/jacoco-aggregate/tennis/org.kata/TennisGame1.html>
 
 #### While refactoring
 
