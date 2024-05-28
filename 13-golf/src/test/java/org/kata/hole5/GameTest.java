@@ -1,4 +1,4 @@
-package org.kata.hole3;
+package org.kata.hole5;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -6,7 +6,7 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
-class Game_Should {
+class GameTest {
     private Game game;
 
     @BeforeEach

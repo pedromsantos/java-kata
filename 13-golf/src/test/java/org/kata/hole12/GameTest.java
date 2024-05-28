@@ -8,7 +8,7 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.kata.hole12.Column.*;
 import static org.kata.hole12.Row.*;
 
-class Game_Should {
+class GameTest {
     private Game game;
 
     @BeforeEach
