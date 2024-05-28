@@ -19,17 +19,7 @@ Refactor the code to improve its readability.
 - Make sure the tests have a good coverage
   - Use a code coverage tool to make sure code coverage by tests is very high
   - For this exercise code coverage is high (100%)
-    - Run `yarn test:ci` and check for yourself
-
-```txt
---------------------------|---------|----------|---------|---------|-------------------
-File                      | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s
---------------------------|---------|----------|---------|---------|-------------------
-All files                 |   86.28 |    67.74 |   96.61 |   86.03 |
- 10_Tennis                |     100 |      100 |     100 |     100 |
-  kata.ts                 |     100 |      100 |     100 |     100 |
-...
-```
+    - Run the tests with your IDE coverage tool and check for yourself
 
 #### While refactoring
 
