@@ -11,7 +11,7 @@
         <artifactId>java-kata</artifactId>
     </parent>
 
-    <artifactId>chareacter_copier</artifactId>
+    <artifactId>character_copier</artifactId>
     <version>1.0-0</version>
 
     <name>Character Copier</name>
