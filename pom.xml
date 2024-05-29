@@ -89,6 +89,8 @@
         <module>14-smelly</module>
         <module>15-character-copier</module>
         <module>16-esa-mars-rover</module>
+        <module>17-social-network</module>
+        <module>18-katacombs</module>
         <module>coverage</module>
     </modules>
 
