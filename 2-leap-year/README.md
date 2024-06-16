@@ -34,7 +34,7 @@ Write a function that returns true or false depending on whether its input integ
 | **1900**  | false      |
 | **2000**  | true       |
 
-## Folow TDD rules stryctly
+## Follow TDD rules strictly
 
 1. Write production code only to pass a failing unit test.
 2. Write no more of a unit test than sufficient to fail (compilation failures are failures).
