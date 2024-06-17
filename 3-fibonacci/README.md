@@ -17,7 +17,7 @@
 | **8**     | 21         |
 | **9**     | 34         |
 
-## Folow TDD rules stryctly
+## Follow TDD rules strictly
 
 1. Write production code only to pass a failing unit test.
 2. Write no more of a unit test than sufficient to fail (compilation failures are failures).
