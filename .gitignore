@@ -11,6 +11,9 @@ buildNumber.properties
 .project
 .classpath
 
+# JetBrains IDE settings
+.idea/
+
 # Compiled class file
 *.class
 
