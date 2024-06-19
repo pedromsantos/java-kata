@@ -55,7 +55,7 @@ class GameTest {
         game.play(new Tile(CENTER, Column.MIDDLE, 'O'));
         game.play(new Tile(TOP, RIGHT, 'X'));
 
-        char winner = game.Winner();
+        char winner = game.winner();
 
         assertEquals('X', winner);
     }
@@ -70,7 +70,7 @@ class GameTest {
         game.play(new Tile(CENTER, Column.MIDDLE, 'X'));
         game.play(new Tile(TOP, RIGHT, 'O'));
 
-        char winner = game.Winner();
+        char winner = game.winner();
 
         assertEquals('O', winner);
     }
@@ -84,7 +84,7 @@ class GameTest {
         game.play(new Tile(TOP, Column.MIDDLE, 'O'));
         game.play(new Tile(CENTER, RIGHT, 'X'));
 
-        char winner = game.Winner();
+        char winner = game.winner();
 
         assertEquals('X', winner);
     }
@@ -99,7 +99,7 @@ class GameTest {
         game.play(new Tile(BOTTOM, Column.MIDDLE, 'X'));
         game.play(new Tile(CENTER, RIGHT, 'O'));
 
-        char winner = game.Winner();
+        char winner = game.winner();
 
         assertEquals('O', winner);
     }
@@ -113,7 +113,7 @@ class GameTest {
         game.play(new Tile(TOP, Column.MIDDLE, 'O'));
         game.play(new Tile(BOTTOM, RIGHT, 'X'));
 
-        char winner = game.Winner();
+        char winner = game.winner();
 
         assertEquals('X', winner);
     }
@@ -128,7 +128,7 @@ class GameTest {
         game.play(new Tile(CENTER, Column.MIDDLE, 'X'));
         game.play(new Tile(BOTTOM, RIGHT, 'O'));
 
-        char winner = game.Winner();
+        char winner = game.winner();
 
         assertEquals('O', winner);
     }
