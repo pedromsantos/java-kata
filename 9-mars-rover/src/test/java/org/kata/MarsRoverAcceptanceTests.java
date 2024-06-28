@@ -12,7 +12,7 @@ class MarsRoverAcceptanceTests {
 
 		String finalPosition = rover.execute(commands);
 
-		assertThat(finalPosition).isEqualTo(commands);
+		assertThat(finalPosition).isEqualTo(commands); // 1 3 N
 	}
 
 	@Test
@@ -22,6 +22,6 @@ class MarsRoverAcceptanceTests {
 
 		String finalPosition = rover.execute(commands);
 
-		assertThat(finalPosition).isEqualTo(commands);
+		assertThat(finalPosition).isEqualTo(commands); // 5 1 E
 	}
 }
