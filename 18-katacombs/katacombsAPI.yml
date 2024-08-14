@@ -1,75 +1,26 @@
-openapi: 3.0.0
+openapi: 3.0.3
+
 info:
   description: "This API allows playing a text based adventure game"
   version: "1.0.0"
   title: "Katacombs"
   license:
     name: "Apache 2.0"
-    url: "http://www.apache.org/licenses/LICENSE-2.0.html"
+    url: "https://www.apache.org/licenses/LICENSE-2.0.html"
+
 tags:
   - name: Game
-    description: Game operations
+    description: Start and Quit a game, help and list active players
   - name: Player
-    description: Player operations
-  - name: Items
-    description: Item operations
-paths:
-  /game/player:
-    post:
-      tags:
-        - Game
-      summary: Start a new game
-      description: Show description
-      operationId: createPlayer
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: "#/components/schemas/Player"
-      responses:
-        "201":
-          description: Game started
-    get:
-      tags:
-        - Game
-      summary: list of active players
-      description: Returns the list of active players
-      operationId: listPlayers
-      responses:
-        "200":
-          description: list of players
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/ListOfPlayers"
+    description: Interact with the game as a player
 
-  /game/player/{playerSid}:
-    get:
-      tags:
-        - Game
-      summary: Help
-      description: Returns available commands and game hints for player
-      operationId: getHelpAndHints
-      parameters:
-        - in: path
-          name: playerSid
-          description: Player unique identification
-          required: true
-          schema:
-            $ref: "#/components/schemas/Sid"
-      responses:
-        "200":
-          description: Available commands and hints returned to caller
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/Help"
-              example: ["There are no applications pending of resolution"]
+paths:
+  /game:
     delete:
       tags:
         - Game
       summary: Quit Game
-      description: By removing the user she quits the game
+      description: By removing the player she quits the game
       operationId: quitGame
       parameters:
         - in: path
@@ -84,12 +35,107 @@ paths:
         "404":
           description: Player with Sid playerSid not found
 
+  /game/player:
+    post:
+      tags:
+        - Game
+      summary: Start a new game
+      description: Start a new game with a new player
+      operationId: startGame
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Player"
+      responses:
+        "201":
+          description: Game started
+    get:
+      tags:
+        - Game
+      summary: list active players
+      description: Returns a list of active players in the game
+      operationId: listPlayers
+      responses:
+        "200":
+          description: list of players
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ListOfPlayers"
+
+  /game/help:
+    get:
+      tags:
+        - Game
+      summary: Help
+      description: Returns available game commands for player
+      operationId: help
+      responses:
+        "200":
+          description: Available commands
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Help"
+              example:
+                [
+                  "GO [ direction ]",
+                  "LOOK [ direction/item ]",
+                  "OPEN [ item ]",
+                  "CLOSE [ item ]",
+                  "TAKE [ item ]",
+                  "DROP [ item ]",
+                  "BAG",
+                  "USE [ item ]",
+                ]
+
+  /game/save:
+    post:
+      tags:
+        - Game
+      summary: Save game
+      description: Save the current game state
+      operationId: saveGame
+      parameters:
+        - in: path
+          name: playerSid
+          description: Player unique identification
+          required: true
+          schema:
+            $ref: "#/components/schemas/Sid"
+      responses:
+        "200":
+          description: Game saved
+        "404":
+          description: Player with Sid playerSid not found
+
+  /game/load:
+    post:
+      tags:
+        - Game
+      summary: Load game
+      description: Load a previously saved game state
+      operationId: loadGame
+      parameters:
+        - in: path
+          name: playerSid
+          description: Player unique identification
+          required: true
+          schema:
+            $ref: "#/components/schemas/Sid"
+      responses:
+        "200":
+          description: Game loaded
+        "404":
+          description: Player with Sid playerSid not found
+
   /player/{playerSid}/location:
     get:
       tags:
         - Player
-      summary: Player location
-      description: Returns information about a location
+      summary: Player location description
+      description: Returns information about a location, including exits and items present at the location
       operationId: lookAround
       parameters:
         - in: path
@@ -105,11 +151,9 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/Location"
-              # example:
-              #   code: 0
-              #   message: There are no applications pending of resolution
         "404":
           description: Player with Sid playerSid not found
+
   /player/{playerSid}/bag:
     get:
       tags:
@@ -131,9 +175,6 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/Bag"
-              # example:
-              #   code: 0
-              #   message: There are no applications pending of resolution
         "404":
           description: Player with Sid playerSid not found
 
@@ -193,6 +234,7 @@ paths:
           description: Moved in requested direction
         "405":
           description: Cannot move in requested direction
+
   /player/{playerSid}/look/{direction}:
     get:
       tags:
@@ -228,10 +270,11 @@ paths:
                     uri: item/00-0000-0000-0002
         "404":
           description: Player with Sid playerSid not found
-  /items/{itemSid}:
+
+  /player/items/{itemSid}:
     get:
       tags:
-        - Items
+        - Player
       summary: Inspect item
       description: Returns more detailed information about an item
       operationId: getItemDescription
@@ -275,10 +318,6 @@ components:
       type: object
       properties:
         commands:
-          type: array
-          items:
-            $ref: "#/components/schemas/Command"
-        hints:
           type: array
           items:
             type: string
