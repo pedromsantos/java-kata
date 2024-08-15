@@ -32,6 +32,12 @@ paths:
       responses:
         "200":
           description: Game finished
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: "Game Over"
+
         "404":
           description: Player with Sid playerSid not found
 
@@ -380,3 +386,6 @@ components:
         - pick
         - drop
         - use
+    GomeOver:
+      type: string
+      example: "Game Over"
