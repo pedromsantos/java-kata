@@ -7,8 +7,13 @@ book [Agile Technical Practices Distilled](https://leanpub.com/agiletechnicalpra
 
 ### Build solution and execute tests
 
+POSIX shell:
 ```sh
-mvn clean install -T 1C
+./mvnw clean verify -T 1C
+```
+PowerShell:
+```powershell
+mvnw.cmd clean verify -T 1C
 ```
 
 ### Coverage reports
