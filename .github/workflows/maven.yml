@@ -18,4 +18,4 @@ jobs:
           distribution: 'temurin'
           cache: maven
       - name: Build
-        run: mvn clean install -T 1C
+        run: ./mvnw -B verify -T 1C
