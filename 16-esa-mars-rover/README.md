@@ -22,13 +22,13 @@ Timestamps on messages allow ESA to calculate how long it took the rover to exec
 ## Input
 
 - The first line defines the upper-right coordinates of the plateau. Example: ‘5:5’
-  - The lower-left coordinates are always ‘0:0’.
+    - The lower-left coordinates are always ‘0:0’.
 - The second line contains the rover’s starting position and direction.
-  - Example ‘1:2:N’ measn x=1, y=2 and Direction=North
+    - Example ‘1:2:N’ measn x=1, y=2 and Direction=North
 - The third line contains the sequence of commands to execute.
-  - Example: ‘LMLMLMLMM’
+    - Example: ‘LMLMLMLMM’
 - The fourth line is the timestamp in ISO format.
-  - Example: ‘1994-11-05T08:32:20.10Z’
+    - Example: ‘1994-11-05T08:32:20.10Z’
 
 ### Example input
 
@@ -39,7 +39,8 @@ LMLMLMLMM\n
 1994-11-05T08:32:20.10Z
 ```
 
-Assume that ESA will never send invalid messages to the rover, nor will it send a message moving the rover outside the defined grid
+Assume that ESA will never send invalid messages to the rover, nor will it send a message moving the rover outside the
+defined grid
 
 ## Output
 

@@ -6,7 +6,7 @@
 - The code must be able to take numbers up to 3999 and convert to their roman equivalent.
 
 | **Arabic number** | **Roman numeral** |
-| ----------------- | ----------------- |
+|-------------------|-------------------|
 | **1**             | I                 |
 | **2**             | II                |
 | **3**             | III               |
@@ -50,30 +50,34 @@ Use the Transformation Priority Premise table to evolve your code.
 
 ### TPP table
 
-| #   | Transformation               | Start code         | End code                                 |
-| --- | ---------------------------- | ------------------ | ---------------------------------------- |
-| 1   | {} -> nil                    | {}                 | [return] nil                             |
-| 2   | Nil -> constant              | [return] nil       | [return] “1”                             |
-| 3   | Constant -> constant+        | [return] “1”       | [return] “1” + “2”                       |
-| 4   | Constant -> scalar           | [return] “1” + “2” | [return] argument                        |
-| 5   | Statement -> statements      | [return] argument  | [return] min(max(0, argument), 10)       |
-| 6   | Unconditional -> conditional | [return] argument  | if(condition) [return] 1 else [return] 0 |
-| 7   | Scalar -> array              | dog                | [dog, cat]                               |
-| 8   | Array -> container           | [dog, cat]         | {dog=”DOG”, cat=”CAT”}                   |
-| 9   | Statement -> tail recursion  | a + b              | a + recursion                            |
-| 10  | If -> loop                   | if(condition)      | loop(condition)                          |
-| 11  | Statement -> recursion       | a + recursion      | recursion                                |
-| 12  | Expression -> function       | today – birth      | CalculateBirthDate()                     |
-| 13  | Variable -> mutation         | day                | var Day = 10; Day = 11;                  |
+| #  | Transformation               | Start code         | End code                                 |
+|----|------------------------------|--------------------|------------------------------------------|
+| 1  | {} -> nil                    | {}                 | [return] nil                             |
+| 2  | Nil -> constant              | [return] nil       | [return] “1”                             |
+| 3  | Constant -> constant+        | [return] “1”       | [return] “1” + “2”                       |
+| 4  | Constant -> scalar           | [return] “1” + “2” | [return] argument                        |
+| 5  | Statement -> statements      | [return] argument  | [return] min(max(0, argument), 10)       |
+| 6  | Unconditional -> conditional | [return] argument  | if(condition) [return] 1 else [return] 0 |
+| 7  | Scalar -> array              | dog                | [dog, cat]                               |
+| 8  | Array -> container           | [dog, cat]         | {dog=”DOG”, cat=”CAT”}                   |
+| 9  | Statement -> tail recursion  | a + b              | a + recursion                            |
+| 10 | If -> loop                   | if(condition)      | loop(condition)                          |
+| 11 | Statement -> recursion       | a + recursion      | recursion                                |
+| 12 | Expression -> function       | today – birth      | CalculateBirthDate()                     |
+| 13 | Variable -> mutation         | day                | var Day = 10; Day = 11;                  |
 
-Transformations at the top of the list have priority over those at the bottom. It is better (or simpler) to change a constant into a variable than it is to add an `if` statement. So when making a test pass, favor simpler transformations (top of the list) over those more complicated (bottom of the list).
+Transformations at the top of the list have priority over those at the bottom. It is better (or simpler) to change a
+constant into a variable than it is to add an `if` statement. So when making a test pass, favor simpler
+transformations (top of the list) over those more complicated (bottom of the list).
 
-Another way to use the Transformation Priority Premise is to keep writing new code using obvious implementation. Whenever duplication is detected, refactor to the next transformation to remove it. When refactoring, first try to use a simpler one. That does not always work; sometimes, you must move to a more complicated transformation or a mix of both.
+Another way to use the Transformation Priority Premise is to keep writing new code using obvious implementation.
+Whenever duplication is detected, refactor to the next transformation to remove it. When refactoring, first try to use a
+simpler one. That does not always work; sometimes, you must move to a more complicated transformation or a mix of both.
 
 ### Example using Transformation Priority Premise on Fibonacci sequence
 
 | Input | Expected output | Transformation               | Implementation                                                          |
-| ----- | --------------- | ---------------------------- | ----------------------------------------------------------------------- |
+|-------|-----------------|------------------------------|-------------------------------------------------------------------------|
 | 0     | 0               | {} -> nil                    | :warning: Does not work                                                 |
 | 0     | 0               | Nil -> constant              | `return 0`                                                              |
 | 1     | 1               | Constant -> scalar           | `return index`                                                          |

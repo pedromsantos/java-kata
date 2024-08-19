@@ -70,8 +70,8 @@ wall: [user name] wall
 'posting', 'reading', 'following' and 'wall' are not part of the commands; commands always start with the user's name.
 
 - Don't worry about handling any exceptions or invalid commands.
-  - Assume that the user will always type the correct commands.
-  - Just focus on the sunny day scenarios.
+    - Assume that the user will always type the correct commands.
+    - Just focus on the sunny day scenarios.
 - Don't bother making it work over a network or across processes.
 - It can all be done in memory, assuming that users will all use the same terminal.
 - Non-existing users should be created as they post their first message.
@@ -84,7 +84,7 @@ Take as much time as you need; there is no deadline.
 ## Unit vs Integration vs Acceptance vs E2E Testing
 
 |                       | **Unit**                    | **Integration aka contract**                            | **Acceptance aka system**                           | **E2e aka functional**                                      |
-| --------------------- | --------------------------- | ------------------------------------------------------- | --------------------------------------------------- | ----------------------------------------------------------- |
+|-----------------------|-----------------------------|---------------------------------------------------------|-----------------------------------------------------|-------------------------------------------------------------|
 | **Boundary**          | Class, Aggregate            | Class - External dependency                             | Application code (mock/stub) external dependencies  | Application and network dependencies services and databases |
 | **Size**              | Tiny                        | Tiny to Small                                           | Small to Medium                                     | Large                                                       |
 | **Environment**       | Development                 | Integration test env                                    | Developement/QA                                     | Prod like                                                   |

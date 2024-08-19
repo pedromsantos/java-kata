@@ -8,10 +8,13 @@ book [Agile Technical Practices Distilled](https://leanpub.com/agiletechnicalpra
 ### Build solution and execute tests
 
 POSIX shell:
+
 ```sh
 ./mvnw clean verify -T 1C
 ```
+
 PowerShell:
+
 ```powershell
 mvnw.cmd clean verify -T 1C
 ```

@@ -8,13 +8,19 @@
 
 ## The game
 
-The game describes a fictional world to be explored by the player via a set of commands. The world is a collection of locations linked to each other geographically (on North, South, East, or West) or via specific connection points (doors, passages, gates, stairs, etc.). The player can move among them using cardinal points for directions or exploiting the connection points with actions or items. The world will have treasures hidden in several locations, which will be collected by players. The game terminates when the player finds the exit of the katacomb. The score will be the sum of the value of the treasures collected.
+The game describes a fictional world to be explored by the player via a set of commands. The world is a collection of
+locations linked to each other geographically (on North, South, East, or West) or via specific connection points (doors,
+passages, gates, stairs, etc.). The player can move among them using cardinal points for directions or exploiting the
+connection points with actions or items. The world will have treasures hidden in several locations, which will be
+collected by players. The game terminates when the player finds the exit of the katacomb. The score will be the sum of
+the value of the treasures collected.
 
 ## Playing the game
 
 ### Starting
 
-The game at startup shows the title and a brief description of the initial location. When the player moves to another location, the system will always prompt a title and a brief description for the new location.
+The game at startup shows the title and a brief description of the initial location. When the player moves to another
+location, the system will always prompt a title and a brief description for the new location.
 
 ```text
 LOST IN SHOREDITCH.
@@ -61,11 +67,13 @@ I CAN SEE A BRICK BUILDING WITH A SIGN SAYING "TRUMAN BREWERY" AND A WOODEN WHIT
 
 ### _Interact with the environment_
 
-There are several commands for interacting with the environment. These commands are always composed of two parts: the action and the object. Usually, the object is specified in the main description or in the result of the LOOK command.
+There are several commands for interacting with the environment. These commands are always composed of two parts: the
+action and the object. Usually, the object is specified in the main description or in the result of the LOOK command.
 
 #### _Opening and closing_
 
-**OPEN** will try to open the object of the command. Usually, it's about doors or gates, but this should be a magic world...
+**OPEN** will try to open the object of the command. Usually, it's about doors or gates, but this should be a magic
+world...
 
 ```text
 I CAN SEE A BRICK BUILDING WITH A SIGN SAYING "TRUMAN BREWERY" AND A WOODEN WHITE DOOR.
@@ -73,7 +81,8 @@ I CAN SEE A BRICK BUILDING WITH A SIGN SAYING "TRUMAN BREWERY" AND A WOODEN WHIT
 YOU ARE INSIDE THE MAIN ROOM OF THE TRUMAN BREWERY. THERE IS A STRONG SMELL OF HOP AND A DOZEN EMPTY CASKS
 ```
 
-**CLOSE** will try to close the object of the command. Usually, it's about doors or gates, but this should be a magic world...
+**CLOSE** will try to close the object of the command. Usually, it's about doors or gates, but this should be a magic
+world...
 
 ```text
 I CAN SEE A BRICK BUILDING WITH A SIGN SAYING "TRUMAN BREWERY" AND AN OPEN WOODEN WHITE DOOR.
@@ -83,7 +92,9 @@ I CAN SEE A BRICK BUILDING WITH A SIGN SAYING "TRUMAN BREWERY" AND A WOODEN WHIT
 
 #### _Taking and dropping items_
 
-**TAKE** will collect an item from the environment and will put it in the bag. **DROP** allows leaving an item in the environment. Every item can be taken and dropped anywhere, and the game has to list the items in the environment just after the main description.
+**TAKE** will collect an item from the environment and will put it in the bag. **DROP** allows leaving an item in the
+environment. Every item can be taken and dropped anywhere, and the game has to list the items in the environment just
+after the main description.
 
 ```text
 INSIDE THE BUILDING.
@@ -106,7 +117,9 @@ THE BAG CONTAINS SOME KEYS, A SWISS KNIFE, A CANDLE AND A COMPASS.
 
 #### _Using items_
 
-**USE** will perform an action with the item, if the environment is set up for it and if we have the item in the bag. The action can result in an extra sentence in the main description, unlocking a passage toward a hidden location, releasing a new item in the location.
+**USE** will perform an action with the item, if the environment is set up for it and if we have the item in the bag.
+The action can result in an extra sentence in the main description, unlocking a passage toward a hidden location,
+releasing a new item in the location.
 
 ```text
 > USE KEYS
@@ -117,7 +130,9 @@ YOU ARE INSIDE THE RED CHAMBER
 
 #### _Collecting gold_
 
-The treasures we can find in the cave are in the form of gold coins. They get collected automatically when a user moves to a location with gold for the first time or opens an item containing gold for the first time. The total amount of gold retrieved can be seen in the BAG.
+The treasures we can find in the cave are in the form of gold coins. They get collected automatically when a user moves
+to a location with gold for the first time or opens an item containing gold for the first time. The total amount of gold
+retrieved can be seen in the BAG.
 
 ### _Special commands_
 
@@ -143,4 +158,7 @@ USE [item]
 
 #### _World correctness_
 
-There are only two requirements for the world. The first is that there should not be two different locations with the same title. The second is that the locations must have mutual reversed references to each other. That means that if from location A going South I end up in location B, then from location B going North I must end up in location A. Same principle should be valid for all cardinal points, but also when going up and down.
+There are only two requirements for the world. The first is that there should not be two different locations with the
+same title. The second is that the locations must have mutual reversed references to each other. That means that if from
+location A going South I end up in location B, then from location B going North I must end up in location A. Same
+principle should be valid for all cardinal points, but also when going up and down.

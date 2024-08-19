@@ -8,7 +8,7 @@
 ## Examples
 
 | **Input** | **Output** |
-| --------- | ---------- |
+|-----------|------------|
 | **1**     | "1"        |
 | **2**     | "2"        |
 | **3**     | "fizz"     |
@@ -39,23 +39,27 @@ There is a set of good habits you should aim to internalize.
 
 - Tests should **test one thing only.**
 
-  Imagine you have 1,000 tests and a failing test. Can you spot a single failing behavior? It does not mean you should write a single assertion. It is fine to have multiple assertions, as long as they are testing the same behavior.
+  Imagine you have 1,000 tests and a failing test. Can you spot a single failing behavior? It does not mean you should
+  write a single assertion. It is fine to have multiple assertions, as long as they are testing the same behavior.
 
-- Create more specific tests to drive a more generic solution (**triangulate**) by adding new tests that force your code to pivot.
+- Create more specific tests to drive a more generic solution (**triangulate**) by adding new tests that force your code
+  to pivot.
 
 - Give your tests meaningful names (behavior/goal-oriented) expressing your business domain.
 
-  - Avoid technical names for tests. _Example:_ myMethodNameReturnsSomething
-  - Avoid leaking implementation details in test names _Example:_ myTestReturnsFalse or CommandPatternTest
-  - Avoid writing technical tests; you should test behaviors, not the technicality of components.
+    - Avoid technical names for tests. _Example:_ myMethodNameReturnsSomething
+    - Avoid leaking implementation details in test names _Example:_ myTestReturnsFalse or CommandPatternTest
+    - Avoid writing technical tests; you should test behaviors, not the technicality of components.
 
 - Always see the test fail for the right reason.
 
-  An unexpected failure is not a valid failure. _Examples:_ Unexpected exception is thrown; missing library, missing import
+  An unexpected failure is not a valid failure. _Examples:_ Unexpected exception is thrown; missing library, missing
+  import
 
 - Ensure you have meaningful feedback from the failing test.
 
-  Ensure your test name, examples, and assertions provide good feedback when a test fails. When a test fails, you should be able to intuitively pinpoint the broken behavior intuitively.
+  Ensure your test name, examples, and assertions provide good feedback when a test fails. When a test fails, you should
+  be able to intuitively pinpoint the broken behavior intuitively.
 
 - Keep your tests and production code separate.
 
@@ -77,11 +81,12 @@ There is a set of good habits you should aim to internalize.
 ### Considerations after the test passes
 
 - Use the Rule of Three to tackle duplication.
-  - If you need something once, build it.
-  - If you need something twice, pay attention.
-  - If you need it a third time, abstract it.
+    - If you need something once, build it.
+    - If you need something twice, pay attention.
+    - If you need it a third time, abstract it.
 
-Keep in mind that duplication is easier to tackle than the wrong abstractions. That's why we want to see duplication three times before cleaning it.
+Keep in mind that duplication is easier to tackle than the wrong abstractions. That's why we want to see duplication
+three times before cleaning it.
 
 ## Resources
 
