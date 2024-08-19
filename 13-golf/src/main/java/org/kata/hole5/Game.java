@@ -30,7 +30,7 @@ public class Game {
     }
 
     private void validatePosition(int x, int y) throws Exception {
-        if (board.TileAt(x, y).Symbol != ' ') {
+        if (board.tileAt(x, y).Symbol != ' ') {
             throw new Exception("Invalid position");
         }
     }
@@ -39,6 +39,6 @@ public class Game {
     }
 
     private void updateBoard(char player, int x, int y) {
-        board.AddTileAt(player, x, y);
+        board.addTileAt(player, x, y);
     }
 }

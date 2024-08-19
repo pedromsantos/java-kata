@@ -53,7 +53,7 @@ class GameTest {
         game.play('O', 1, 1);
         game.play('X', 0, 2);
 
-        char winner = game.Winner();
+        char winner = game.winner();
 
         assertEquals('X', winner);
     }
@@ -68,7 +68,7 @@ class GameTest {
         game.play('X', 1, 1);
         game.play('O', 0, 2);
 
-        char winner = game.Winner();
+        char winner = game.winner();
 
         assertEquals('O', winner);
     }
@@ -82,7 +82,7 @@ class GameTest {
         game.play('O', 0, 1);
         game.play('X', 1, 2);
 
-        char winner = game.Winner();
+        char winner = game.winner();
 
         assertEquals('X', winner);
     }
@@ -97,7 +97,7 @@ class GameTest {
         game.play('X', 2, 1);
         game.play('O', 1, 2);
 
-        char winner = game.Winner();
+        char winner = game.winner();
 
         assertEquals('O', winner);
     }
@@ -111,7 +111,7 @@ class GameTest {
         game.play('O', 0, 1);
         game.play('X', 2, 2);
 
-        char winner = game.Winner();
+        char winner = game.winner();
 
         assertEquals('X', winner);
     }
@@ -126,7 +126,7 @@ class GameTest {
         game.play('X', 1, 1);
         game.play('O', 2, 2);
 
-        char winner = game.Winner();
+        char winner = game.winner();
 
         assertEquals('O', winner);
     }

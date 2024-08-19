@@ -4,7 +4,7 @@ public class Game {
     private char lastPlayer = ' ';
     private Board board = new Board();
 
-    public char Winner() {
+    public char winner() {
         return board.anyRowHasSamePlayerOnAllColumns();
     }
 
@@ -30,7 +30,7 @@ public class Game {
     }
 
     private void validatePosition(int x, int y) throws Exception {
-        if (board.TileAt(new Tile(x, y)).isNotEmpty()) {
+        if (board.tileAt(new Tile(x, y)).isNotEmpty()) {
             throw new Exception("Invalid position");
         }
     }
@@ -39,6 +39,6 @@ public class Game {
     }
 
     private void updateBoard(char player, int x, int y) {
-        board.AddTileAt(new Tile(x, y, player));
+        board.addTileAt(new Tile(x, y, player));
     }
 }

@@ -4,7 +4,7 @@ public class Game {
     private char _lastSymbol = ' ';
     private Board board = new Board();
 
-    public char Winner() {
+    public char winner() {
         return board.rowHasSameSymbolOnAllColumns();
     }
 
@@ -30,7 +30,7 @@ public class Game {
     }
 
     private void validatePosition(int x, int y) throws Exception {
-        if (board.TileAt(x, y).Symbol != ' ') {
+        if (board.tileAt(x, y).Symbol != ' ') {
             throw new Exception("Invalid position");
         }
     }
@@ -39,6 +39,6 @@ public class Game {
     }
 
     private void updateBoard(char symbol, int x, int y) {
-        board.AddTileAt(symbol, x, y);
+        board.addTileAt(symbol, x, y);
     }
 }

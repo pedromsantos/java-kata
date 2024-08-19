@@ -28,7 +28,7 @@ public class Game {
     }
 
     private void validatePosition(int x, int y) throws Exception {
-        if (board.TileAt(x, y).Symbol != ' ') {
+        if (board.tileAt(x, y).Symbol != ' ') {
             throw new Exception("Invalid position");
         }
     }
@@ -37,10 +37,10 @@ public class Game {
     }
 
     private void updateBoard(char symbol, int x, int y) {
-        board.AddTileAt(symbol, x, y);
+        board.addTileAt(symbol, x, y);
     }
 
-    public char Winner() {
+    public char winner() {
         for(int row = 0; row < 3; row++) {
             if (isRowFull(row)) {
                 char winnerOnRow = winnerOnRow(row);
@@ -52,17 +52,17 @@ public class Game {
     }
 
     private char winnerOnRow(int x) {
-        if (board.TileAt(x, 0).Symbol ==
-                board.TileAt(x, 1).Symbol &&
-                board.TileAt(x, 2).Symbol == board.TileAt(x, 1).Symbol) {
-            return board.TileAt(x, 0).Symbol;
+        if (board.tileAt(x, 0).Symbol ==
+                board.tileAt(x, 1).Symbol &&
+                board.tileAt(x, 2).Symbol == board.tileAt(x, 1).Symbol) {
+            return board.tileAt(x, 0).Symbol;
         }
         return ' ';
     }
 
     private boolean isRowFull(int x) {
-        return board.TileAt(x, 0).Symbol != ' ' &&
-                board.TileAt(x, 1).Symbol != ' ' &&
-                board.TileAt(x, 2).Symbol != ' ';
+        return board.tileAt(x, 0).Symbol != ' ' &&
+                board.tileAt(x, 1).Symbol != ' ' &&
+                board.tileAt(x, 2).Symbol != ' ';
     }
 }

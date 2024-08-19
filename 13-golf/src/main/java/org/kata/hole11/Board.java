@@ -19,7 +19,7 @@ public class Board {
         }
     }
 
-    public Tile TileAt(Tile other) {
+    public Tile tileAt(Tile other) {
         for (Tile t : plays) {
             if (t.hasSamePositionAs(other)) {
                 return t;
@@ -28,8 +28,8 @@ public class Board {
         return null;
     }
 
-    public void AddTileAt(Tile tile) {
-        TileAt(tile).setPlayer(tile.getPlayer());
+    public void addTileAt(Tile tile) {
+        tileAt(tile).setPlayer(tile.getPlayer());
     }
 
     public char anyRowHasSamePlayerOnAllColumns() {
@@ -42,15 +42,15 @@ public class Board {
     }
 
     private boolean isRowFull(int row) {
-        return TileAt(new Tile(row, LEFT_COLUMN)).isNotEmpty() &&
-                TileAt(new Tile(row, MIDDLE_COLUMN)).isNotEmpty() &&
-                TileAt(new Tile(row, RIGHT_COLUMN)).isNotEmpty();
+        return tileAt(new Tile(row, LEFT_COLUMN)).isNotEmpty() &&
+                tileAt(new Tile(row, MIDDLE_COLUMN)).isNotEmpty() &&
+                tileAt(new Tile(row, RIGHT_COLUMN)).isNotEmpty();
     }
 
     private char commonPlayerOnAllColumns(int row) {
-        if (TileAt(new Tile(row, LEFT_COLUMN)).hasSamePlayerAs(TileAt(new Tile(row, MIDDLE_COLUMN))) &&
-                TileAt(new Tile(row, MIDDLE_COLUMN)).hasSamePlayerAs(TileAt(new Tile(row, RIGHT_COLUMN)))) {
-            return TileAt(new Tile(row, LEFT_COLUMN)).getPlayer();
+        if (tileAt(new Tile(row, LEFT_COLUMN)).hasSamePlayerAs(tileAt(new Tile(row, MIDDLE_COLUMN))) &&
+                tileAt(new Tile(row, MIDDLE_COLUMN)).hasSamePlayerAs(tileAt(new Tile(row, RIGHT_COLUMN)))) {
+            return tileAt(new Tile(row, LEFT_COLUMN)).getPlayer();
         }
         return ' ';
     }

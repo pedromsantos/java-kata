@@ -18,7 +18,7 @@ public class Board
         }
     }
 
-    public Tile TileAt(Tile other)
+    public Tile tileAt(Tile other)
     {
         for (Tile t : plays) {
             if (t.hasSamePositionAs(other)){
@@ -28,9 +28,9 @@ public class Board
         return null;
     }
 
-    public void AddTileAt(Tile tile)
+    public void addTileAt(Tile tile)
     {
-        TileAt(tile).setSymbol(tile.getSymbol());
+        tileAt(tile).setSymbol(tile.getSymbol());
     }
 
     public char anyRowHasSamePlayerOnAllColumns() {
@@ -43,15 +43,15 @@ public class Board
     }
 
     private boolean isRowFull(int row) {
-        return TileAt(new Tile(row, 0)).isNotEmpty() &&
-                TileAt(new Tile(row, 1)).isNotEmpty() &&
-                TileAt(new Tile(row, 2)).isNotEmpty();
+        return tileAt(new Tile(row, 0)).isNotEmpty() &&
+                tileAt(new Tile(row, 1)).isNotEmpty() &&
+                tileAt(new Tile(row, 2)).isNotEmpty();
     }
 
     private char commonPlayerOnAllColumns(int row) {
-        if (TileAt(new Tile(row, 0)).hasSameSymbolAs(TileAt(new Tile(row, 1))) &&
-                TileAt(new Tile(row, 2)).hasSameSymbolAs(TileAt(new Tile(row, 1)))) {
-            return TileAt(new Tile(row, 0)).getSymbol();
+        if (tileAt(new Tile(row, 0)).hasSameSymbolAs(tileAt(new Tile(row, 1))) &&
+                tileAt(new Tile(row, 2)).hasSameSymbolAs(tileAt(new Tile(row, 1)))) {
+            return tileAt(new Tile(row, 0)).getSymbol();
         }
         return ' ';
     }

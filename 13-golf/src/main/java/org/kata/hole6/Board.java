@@ -22,7 +22,7 @@ public class Board
         }
     }
 
-    public Tile TileAt(int x, int y)
+    public Tile tileAt(int x, int y)
     {
         for (Tile t : plays) {
             if (t.X == x && t.Y == y){
@@ -32,9 +32,9 @@ public class Board
         return null;
     }
 
-    public void AddTileAt(char player, int x, int y)
+    public void addTileAt(char player, int x, int y)
     {
-        TileAt(x,y).Symbol = player;
+        tileAt(x,y).Symbol = player;
     }
 
     public char anyRowHasSamePlayerOnAllColumns() {
@@ -47,16 +47,16 @@ public class Board
     }
 
     private boolean isRowFull(int x) {
-        return TileAt(x, 0).Symbol != ' ' &&
-                TileAt(x, 1).Symbol != ' ' &&
-                TileAt(x, 2).Symbol != ' ';
+        return tileAt(x, 0).Symbol != ' ' &&
+                tileAt(x, 1).Symbol != ' ' &&
+                tileAt(x, 2).Symbol != ' ';
     }
 
     private char commonPlayerOnAllColumns(int x) {
-        if (TileAt(x, 0).Symbol ==
-                TileAt(x, 1).Symbol &&
-                TileAt(x, 2).Symbol == TileAt(x, 1).Symbol) {
-            return TileAt(x, 0).Symbol;
+        if (tileAt(x, 0).Symbol ==
+                tileAt(x, 1).Symbol &&
+                tileAt(x, 2).Symbol == tileAt(x, 1).Symbol) {
+            return tileAt(x, 0).Symbol;
         }
         return ' ';
     }
