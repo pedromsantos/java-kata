@@ -24,7 +24,7 @@ Timestamps on messages allow ESA to calculate how long it took the rover to exec
 - The first line defines the upper-right coordinates of the plateau. Example: ‘5:5’
     - The lower-left coordinates are always ‘0:0’.
 - The second line contains the rover’s starting position and direction.
-    - Example ‘1:2:N’ measn x=1, y=2 and Direction=North
+    - Example: ‘1:2:N’ means x=1, y=2 and Direction=North
 - The third line contains the sequence of commands to execute.
     - Example: ‘LMLMLMLMM’
 - The fourth line is the timestamp in ISO format.
