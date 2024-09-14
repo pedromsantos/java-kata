@@ -2,7 +2,7 @@
 
 ## Problem
 
-A robotic rover developed by ESA (Europen Space Agency) will land on a plateau on Mars.
+A robotic rover developed by ESA (European Space Agency) will land on a plateau on Mars.
 The rover will navigate the plateau while its cameras get a complete view of the terrain and send it back to Earth.
 
 The plateau is divided up into a virtual rectangular grid to simplify navigation.
