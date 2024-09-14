@@ -40,7 +40,7 @@ LMLMLMLMM\n
 ```
 
 Assume that ESA will never send invalid messages to the rover, nor will it send a message moving the rover outside the
-defined grid
+defined grid.
 
 ## Output
 
@@ -60,7 +60,7 @@ Example output:
 
 - Commands can be in any EU official language.
 - N, S, E, and W are not translated.
-- We expect to support more EU official languages in the future
+- We expect to support more EU official languages in the future.
 - Language is specified in the first line of the message.
 
 Example input (same message using various EU languages)
