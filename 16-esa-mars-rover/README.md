@@ -15,8 +15,8 @@ The possible commands are ‘L’, ‘R’, and ‘M’.
 Commands ‘L’ and ‘R’ make the rover spin 90 degrees left or right without moving from its current spot.
 Command ‘M’ makes the rover move forward one grid square in the current heading of the rover (‘N’, ‘S’, ‘E’, ‘W’).
 
-When the rover finishes executing the instructions.
-It transmits its final position plus a timestamp back to ESA using its onboard radio.
+When the rover finishes executing the instructions, it transmits its final position plus a timestamp back to ESA using
+its onboard radio.
 Timestamps on messages allow ESA to calculate how long it took the rover to execute the commands.
 
 ## Input
@@ -108,12 +108,13 @@ SASASASAA\n
 
 ```java
 public interface Rover {
-  void execute(String instructions);
+    void execute(String instructions);
 }
 
 public interface Radio {
-  void send(String message);
-  String receive();
+    void send(String message);
+
+    String receive();
 }
 ```
 
