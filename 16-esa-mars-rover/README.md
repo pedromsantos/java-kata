@@ -2,7 +2,7 @@
 
 ## Problem
 
-A robotic rover developed by ESA (Europen Space Agency) will land on a plateau on Mars.
+A robotic rover developed by ESA (European Space Agency) will land on a plateau on Mars.
 The rover will navigate the plateau while its cameras get a complete view of the terrain and send it back to Earth.
 
 The plateau is divided up into a virtual rectangular grid to simplify navigation.
@@ -15,8 +15,8 @@ The possible commands are ‘L’, ‘R’, and ‘M’.
 Commands ‘L’ and ‘R’ make the rover spin 90 degrees left or right without moving from its current spot.
 Command ‘M’ makes the rover move forward one grid square in the current heading of the rover (‘N’, ‘S’, ‘E’, ‘W’).
 
-When the rover finishes executing the instructions.
-It transmits its final position plus a timestamp back to ESA using its onboard radio.
+When the rover finishes executing the instructions, it transmits its final position plus a timestamp back to ESA using
+its onboard radio.
 Timestamps on messages allow ESA to calculate how long it took the rover to execute the commands.
 
 ## Input
@@ -24,7 +24,7 @@ Timestamps on messages allow ESA to calculate how long it took the rover to exec
 - The first line defines the upper-right coordinates of the plateau. Example: ‘5:5’
     - The lower-left coordinates are always ‘0:0’.
 - The second line contains the rover’s starting position and direction.
-    - Example ‘1:2:N’ measn x=1, y=2 and Direction=North
+    - Example: ‘1:2:N’ means x=1, y=2 and Direction=North
 - The third line contains the sequence of commands to execute.
     - Example: ‘LMLMLMLMM’
 - The fourth line is the timestamp in ISO format.
@@ -40,7 +40,7 @@ LMLMLMLMM\n
 ```
 
 Assume that ESA will never send invalid messages to the rover, nor will it send a message moving the rover outside the
-defined grid
+defined grid.
 
 ## Output
 
@@ -60,7 +60,7 @@ Example output:
 
 - Commands can be in any EU official language.
 - N, S, E, and W are not translated.
-- We expect to support more EU official languages in the future
+- We expect to support more EU official languages in the future.
 - Language is specified in the first line of the message.
 
 Example input (same message using various EU languages)
@@ -108,12 +108,13 @@ SASASASAA\n
 
 ```java
 public interface Rover {
-  void execute(String instructions);
+    void execute();
 }
 
 public interface Radio {
-  void send(String message);
-  String receive();
+    void send(String message);
+
+    String receive();
 }
 ```
 
