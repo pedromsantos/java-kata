@@ -1,8 +1,8 @@
 openapi: 3.0.0
 info:
-  description: This API allows playing a text based adventure game
+  description: This API allows playing a text-based adventure game called Katacombs
   version: 1.0.0
-  title: Katacombs
+  title: Katacombs API
   license:
     name: Apache 2.0
     url: https://www.apache.org/licenses/LICENSE-2.0.html
@@ -28,7 +28,11 @@ paths:
               $ref: "#/components/schemas/Player"
       responses:
         "201":
-          description: Game started
+          description: Game started successfully
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Player"
     get:
       tags:
         - Game
@@ -58,12 +62,15 @@ paths:
             $ref: "#/components/schemas/Sid"
       responses:
         "200":
-          description: Game finished
+          description: Game finished successfully
           content:
-            text/plain:
+            application/json:
               schema:
-                type: string
-                example: Game Over
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: "Game Over"
         "404":
           description: Player with Sid playerSid not found
   /player/items/{itemSid}:
@@ -137,11 +144,54 @@ paths:
             $ref: "#/components/schemas/Action"
       responses:
         "200":
-          description: Action performed
+          description: Action performed successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: "Action completed successfully"
         "404":
           description: Player or Item with Sid playerSid not found
         "405":
           description: Action not available for specified item
+  /player/{playerSid}/item/{itemSid}/take:
+    put:
+      tags:
+        - Player
+      summary: Take an item
+      description: Pick up an item from the current location and add it to player's bag
+      operationId: takeItem
+      parameters:
+        - in: path
+          name: playerSid
+          description: Player unique identification
+          required: true
+          schema:
+            $ref: "#/components/schemas/Sid"
+        - in: path
+          name: itemSid
+          description: Item to take
+          required: true
+          schema:
+            $ref: "#/components/schemas/Sid"
+      responses:
+        "200":
+          description: Item taken successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: "Item taken successfully"
+        "404":
+          description: Player or Item not found
+        "409":
+          description: Item cannot be taken (not in current location or bag is full)
   /player/{playerSid}/location:
     get:
       tags:
@@ -297,18 +347,38 @@ components:
           items:
             $ref: "#/components/schemas/Item"
     Player:
-      description: Player type
+      description: Player information and current game state
       type: object
       required:
         - sid
         - name
+        - location
+        - bag
       properties:
         sid:
           $ref: "#/components/schemas/Sid"
         name:
           type: string
-          example: Pedro
+          minLength: 1
+          maxLength: 50
+          example: "Pedro"
+        location:
+          $ref: "#/components/schemas/Location"
+        bag:
+          $ref: "#/components/schemas/Bag"
     Sid:
-      description: Sid type
+      description: Unique identifier for game entities
       type: string
-      example: 001001-999199919878-99989798
+      pattern: "^[0-9]{6}-[0-9]{12}-[00-9]{8}$"
+      example: "001001-999199919878-99989798"
+    Error:
+      type: object
+      properties:
+        code:
+          type: integer
+          format: int32
+        message:
+          type: string
+      required:
+        - code
+        - message
