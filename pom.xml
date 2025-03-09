@@ -9,7 +9,7 @@
     <version>1.0-0</version>
     <packaging>pom</packaging>
 
-    <name>Java Kata's</name>
+    <name>Java Kata</name>
 
     <modules>
         <module>1-fizzbuzz</module>
