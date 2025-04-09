@@ -1,6 +1,8 @@
 package org.kata;
 
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.ValueSource;
 
 import static org.assertj.core.api.Assertions.assertThat;
 //non_three_and_five_should_return_stringified_number
@@ -9,33 +11,23 @@ class FizzBuzzTest {
 
     FizzBuzz fizzBuzz = new FizzBuzz();
 
-    @Test
-    void one_number_should_return_one_string() {
-        // Given
-        int number = 1;
+    @ParameterizedTest
+    @ValueSource(ints = {1, 2, 11, 56})
+    void non_three_and_five_multiples_should_return_string_format_number(int number) {
         // When
         String result = fizzBuzz.evaluate(number);
         // Then
-        assertThat(result).isEqualTo("1");
-    }
-
-    @Test
-    void two_number_should_return_two_string() {
-        //Given
-        int number = 2;
-        // When
-        String result = fizzBuzz.evaluate(number);
-        // Then
-        assertThat(result).isEqualTo("2");
-    }
-
-    @Test
-    void eleven_number_should_return_eleven_string() {
-        // Given
-        int number = 11;
-        // When
-        String result = fizzBuzz.evaluate(number);
-        // Then
-        assertThat(result).isEqualTo("11");
+        if (number == 1) {
+            assertThat(result).isEqualTo("1");
+        }
+        if (number == 2) {
+            assertThat(result).isEqualTo("2");
+        }
+        if (number == 11) {
+            assertThat(result).isEqualTo("11");
+        }
+        if (number == 56) {
+            assertThat(result).isEqualTo("56");
+        }
     }
 }
