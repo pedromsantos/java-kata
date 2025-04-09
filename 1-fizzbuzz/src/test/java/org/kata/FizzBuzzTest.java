@@ -1,5 +1,6 @@
 package org.kata;
 
+import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
 
@@ -7,6 +8,16 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 class FizzBuzzTest {
     FizzBuzz fizzBuzz = new FizzBuzz();
+
+    @Test
+    void number_three_should_return_fizz() {
+        // Given
+        int number = 3;
+        // When
+        String result = fizzBuzz.evaluate(number);
+        // Then
+        assertThat(result).isEqualTo("Fizz");
+    }
 
     @ParameterizedTest
     @ValueSource(ints = {1, 2, 11, 56})
