@@ -9,30 +9,9 @@ import static org.assertj.core.api.Assertions.assertThat;
 class FizzBuzzTest {
     FizzBuzz fizzBuzz = new FizzBuzz();
 
-    @Test
-    void number_three_should_return_fizz() {
-        // Given
-        int number = 3;
-        // When
-        String result = fizzBuzz.evaluate(number);
-        // Then
-        assertThat(result).isEqualTo("Fizz");
-    }
-
-    @Test
-    void number_six_should_return_fizz() {
-        // Given
-        int number = 6;
-        // When
-        String result = fizzBuzz.evaluate(number);
-        // Then
-        assertThat(result).isEqualTo("Fizz");
-    }
-
-    @Test
-    void number_twelve_should_return_fizz() {
-        // Given
-        int number = 12;
+    @ParameterizedTest
+    @ValueSource(ints = {3, 6, 12})
+    void three_multiples_numbers_should_return_fizz(int number) {
         // When
         String result = fizzBuzz.evaluate(number);
         // Then
@@ -41,7 +20,7 @@ class FizzBuzzTest {
 
     @ParameterizedTest
     @ValueSource(ints = {1, 2, 11, 56})
-    void non_three_and_five_multiples_should_return_string_format_number(int number) {
+    void non_three_and_five_multiples_numbers_should_return_string_format_number(int number) {
         // When
         String result = fizzBuzz.evaluate(number);
         // Then
