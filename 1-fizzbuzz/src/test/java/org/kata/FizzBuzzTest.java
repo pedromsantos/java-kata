@@ -10,7 +10,7 @@ class FizzBuzzTest {
     FizzBuzz fizzBuzz = new FizzBuzz();
 
     @Test
-    void one_nimber_should_return_one_string() {
+    void one_number_should_return_one_string() {
         // Given
         int number = 1;
         // When
@@ -27,5 +27,15 @@ class FizzBuzzTest {
         String result = fizzBuzz.evaluate(number);
         // Then
         assertThat(result).isEqualTo("2");
+    }
+
+    @Test
+    void eleven_number_should_return_eleven_string() {
+        // Given
+        int number = 11;
+        // When
+        String result = fizzBuzz.evaluate(number);
+        // Then
+        assertThat(result).isEqualTo("11");
     }
 }
