@@ -13,12 +13,19 @@ class FizzBuzzTest {
     void one_nimber_should_return_one_string() {
         // Given
         int number = 1;
-
         // When
         String result = fizzBuzz.evaluate(number);
-
         // Then
         assertThat(result).isEqualTo("1");
+    }
 
+    @Test
+    void two_number_should_return_two_string() {
+        //Given
+        int number = 2;
+        // When
+        String result = fizzBuzz.evaluate(number);
+        // Then
+        assertThat(result).isEqualTo("2");
     }
 }
