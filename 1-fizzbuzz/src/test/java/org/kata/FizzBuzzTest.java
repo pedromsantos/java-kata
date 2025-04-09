@@ -19,6 +19,17 @@ class FizzBuzzTest {
         assertThat(result).isEqualTo("Fizz");
     }
 
+    @Test
+    void number_six_should_return_fizz() {
+        // Given
+        int number = 6;
+        // When
+        String result = fizzBuzz.evaluate(number);
+        // Then
+        assertThat(result).isEqualTo("Fizz");
+    }
+
+
     @ParameterizedTest
     @ValueSource(ints = {1, 2, 11, 56})
     void non_three_and_five_multiples_should_return_string_format_number(int number) {
