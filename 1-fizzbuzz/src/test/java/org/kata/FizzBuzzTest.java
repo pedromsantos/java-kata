@@ -1,6 +1,5 @@
 package org.kata;
 
-import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
 
@@ -10,7 +9,7 @@ class FizzBuzzTest {
     FizzBuzz fizzBuzz = new FizzBuzz();
 
     @ParameterizedTest
-    @ValueSource(ints = {3, 6, 12})
+    @ValueSource(ints = {3, 6, 12, 99})
     void three_multiples_numbers_should_return_fizz(int number) {
         // When
         String result = fizzBuzz.evaluate(number);
