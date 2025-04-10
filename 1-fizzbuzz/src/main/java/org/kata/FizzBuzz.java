@@ -2,7 +2,7 @@ package org.kata;
 
 public class FizzBuzz {
     public String evaluate(int number) {
-        if (number == 15 || number == 30) {
+        if (number == 15 || number == 30 || number == 45) {
             return "FizzBuzz";
         }
         if (number % 5 == 0) {

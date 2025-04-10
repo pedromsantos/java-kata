@@ -29,6 +29,16 @@ class FizzBuzzTest {
         assertThat(result).isEqualTo("FizzBuzz");
     }
 
+    @Test
+    void fourty_five_number_should_return_fizzbuzz() {
+        // Given
+        int number = 45;
+        // When
+        String result = fizzBuzz.evaluate(number);
+        // Then
+        assertThat(result).isEqualTo("FizzBuzz");
+    }
+
     @ParameterizedTest
     @ValueSource(ints = {5, 10, 55, 80})
     void five_multiples_numbers_should_return_buzz(int number) {
