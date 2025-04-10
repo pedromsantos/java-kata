@@ -10,9 +10,19 @@ class FizzBuzzTest {
     FizzBuzz fizzBuzz = new FizzBuzz();
 
     @Test
-    void five_number_should_return_five_string() {
+    void five_number_should_return_buzz() {
         // Given
         int number = 5;
+        // When
+        String result = fizzBuzz.evaluate(number);
+        // Then
+        assertThat(result).isEqualTo("Buzz");
+    }
+
+    @Test
+    void ten_number_should_return_buzz() {
+        // Given
+        int number = 10;
         // When
         String result = fizzBuzz.evaluate(number);
         // Then
