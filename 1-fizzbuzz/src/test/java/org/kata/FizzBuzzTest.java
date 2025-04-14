@@ -1,6 +1,5 @@
 package org.kata;
 
-import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
 
@@ -20,7 +19,7 @@ class FizzBuzzTest {
 
     @ParameterizedTest
     @ValueSource(ints = {5, 10, 55, 80})
-    void five_multiples_numbers_should_return_buzz(int number) {
+    void five_multiple_numbers_should_return_buzz(int number) {
         // When
         String result = fizzBuzz.evaluate(number);
         // Then
@@ -29,7 +28,7 @@ class FizzBuzzTest {
 
     @ParameterizedTest
     @ValueSource(ints = {3, 6, 12, 99})
-    void three_multiples_numbers_should_return_fizz(int number) {
+    void three_multiple_numbers_should_return_fizz(int number) {
         // When
         String result = fizzBuzz.evaluate(number);
         // Then
@@ -38,7 +37,7 @@ class FizzBuzzTest {
 
     @ParameterizedTest
     @ValueSource(ints = {1, 2, 11, 56})
-    void non_three_and_five_multiples_numbers_should_return_string_format_number(int number) {
+    void non_three_and_five_multiple_numbers_should_return_string_formatted_number(int number) {
         // When
         String result = fizzBuzz.evaluate(number);
         // Then
@@ -54,5 +53,17 @@ class FizzBuzzTest {
         if (number == 56) {
             assertThat(result).isEqualTo("56");
         }
+    }
+
+    @ParameterizedTest
+    @ValueSource(ints = {0, -15, -3, -5})
+    void should_handle_zero_and_negative_numbers(int number) {
+        // When
+        String result = fizzBuzz.evaluate(number);
+        // Then
+        if (number % 3 == 0 && number % 5 == 0) assertThat(result).isEqualTo("FizzBuzz");
+        else if (number % 5 == 0) assertThat(result).isEqualTo("Buzz");
+        else if (number % 3 == 0) assertThat(result).isEqualTo("Fizz");
+        else assertThat(result).isEqualTo(String.valueOf(number));
     }
 }
