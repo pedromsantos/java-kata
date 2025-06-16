@@ -10,16 +10,16 @@ terrain to send back to Earth.
 ## Input
 
 - The rover receives three lines of input:
-    - The first line defines the upper-right coordinates of the plateau.
-        - Example: ‘5:5’
-        - The lower-left coordinates are always ‘0 0’.
-    - The second line contains the rover’s starting position and direction.
-        - Example ‘1:2:N’ measn x=1, y=2 and Direction=North
-        - Assume that the square directly North from (x, y) is (x, y+1).
-    - The third line contains the sequence of commands to execute.
-        - Example: ‘LMLMLMLMM’
-        - ‘L’ and ‘R’ makes the rover spin 90 degrees left or right respectively, without moving from its current spot.
-        - ‘M’ means move forward one grid point, and maintain the same heading.
+  - The first line defines the upper-right coordinates of the plateau.
+    - Example: ‘5:5’
+    - The lower-left coordinates are always ‘0 0’.
+  - The second line contains the rover’s starting position and direction.
+    - Example ‘1:2:N’ measn x=1, y=2 and Direction=North
+    - Assume that the square directly North from (x, y) is (x, y+1).
+  - The third line contains the sequence of commands to execute.
+    - Example: ‘LMLMLMLMM’
+    - ‘L’ and ‘R’ makes the rover spin 90 degrees left or right respectively, without moving from its current spot.
+    - ‘M’ means move forward one grid point, and maintain the same heading.
 
 ### Example input
 
@@ -97,6 +97,57 @@ acceptance tests should turn green.
 ```typescript
 const rover = new Rover();
 const finalPosition = rover.execute('5:5\n1:2:N\nLMLMLMLMM');
+```
+
+### Extra obstacles and wrap around edges
+
+- Implement wrapping at edges.
+
+- Implement obstacle detection before each move to a new square.
+  - If a given sequence of commands encounters an obstacle, the rover moves up to the last possible point, aborts the sequence and reports the obstacle.
+
+1. **Plateau**:
+
+   - Format: "-----\n--O--\n-----\n-O-O-\n-----"
+
+2. **Initial Position**: Starting position and direction (e.g., `1 2 N`)
+
+   - Format: `<x> <y> <direction>`
+   - Direction can be N(orth), E(ast), S(outh), or W(est)
+   - Moving North from (x, y) leads to (x, y+1)
+
+3. **Command Sequence**: Series of movement instructions (e.g., `LMLMLMLMM`)
+
+   - `L`: Rotate 90° left
+   - `R`: Rotate 90° right
+   - `M`: Move forward one grid point
+
+4. **Obstacle detection**: before each move to a new square. If a given sequence of commands encounters an obstacle, the rover moves up to the last possible point, aborts the sequence and reports the obstacle.
+
+#### Sample Input with obstacles
+
+```text
+-----
+--O--
+-----
+-O-O-
+-----
+1 2 N
+LMLMLMLMM
+```
+
+#### Sample Output with obstacles
+
+If commands completed
+
+```text
+1 3 N
+```
+
+If obstacle found
+
+```text
+O 1 3 N
 ```
 
 ## Second run
