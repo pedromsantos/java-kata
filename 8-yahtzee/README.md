@@ -27,36 +27,36 @@ The kata consists of creating the rules to score rolls, calculate player totals 
 - Player assigns final roll to a category (see catagory list below)
 - Player cannot assign to already assigned category
 - Calculate score for player/roll/category
-    - If roll is compatible score
-    - If roll is not compatible score zero
+  - If roll is compatible score
+  - If roll is not compatible score zero
 - Update player score
 - Game finishes when all players have assigned rolls to all categories
 
 ### Categories
 
 - Ones, Twos, Threes, Fours, Fives, Sixes
-    - The player scores the sum of the dice that reads one, two, three, four, five or six, respectively.
-    - Example roll: 1, 1, 2, 4, 4 placed on “fours” scores 8 points.
+  - The player scores the sum of the dice that reads one, two, three, four, five or six, respectively.
+  - Example roll: 1, 1, 2, 4, 4 placed on “fours” scores 8 points.
 - Pair
-    - The player scores the sum of the two highest matching dice.
-    - Example roll: 3, 3, 3, 4, 4 placed on “pair” scores 8.
+  - The player scores the sum of the two highest matching dice.
+  - Example roll: 3, 3, 3, 4, 4 placed on “pair” scores 8.
 - Two pairs
-    - If there are two pairs of dice with the same number, the player scores the sum of these dice.
-    - For example, 1, 1, 2, 3, 3 placed on “two pairs” scores 8.
+  - If there are two pairs of dice with the same number, the player scores the sum of these dice.
+  - For example, 1, 1, 2, 3, 3 placed on “two pairs” scores 8.
 - Three of a kind
-    - If there are three dice with the same number, the player scores the sum of these dice.
-    - Example roll: 3, 3, 3, 4, 5 places on “three of a kind” scores 9.
+  - If there are three dice with the same number, the player scores the sum of these dice.
+  - Example roll: 3, 3, 3, 4, 5 places on “three of a kind” scores 9.
 - Four of a kind
-    - If there are four dice with the same number, the player scores the sum of these dice.
-    - Example roll: 2, 2, 2, 2, 5 places on “four of a kind” scores 8.
+  - If there are four dice with the same number, the player scores the sum of these dice.
+  - Example roll: 2, 2, 2, 2, 5 places on “four of a kind” scores 8.
 - Small straight
-    - If the roll starts on 1
-    - Example roll: 1,2,3,4,5, the player scores 15 (the sum of all the dice).
+  - If the roll starts on 1
+  - Example roll: 1,2,3,4,5, the player scores 15 (the sum of all the dice).
 - Large straight
-    - If the roll starts on 2
-    - Example roll: 2,3,4,5,6, the player scores 20 (the sum of all the dice).
+  - If the roll starts on 2
+  - Example roll: 2,3,4,5,6, the player scores 20 (the sum of all the dice).
 - Full house
-    - If the dice are two of a kind and three of a kind, the player scores the sum of all the dice.
-    - Example roll: 1,1,2,2,2 placed on “full house” scores 8.
+  - If the dice are two of a kind and three of a kind, the player scores 25 points.
+  - Example roll: 1,1,2,2,2 placed on “full house” scores 8.
 - Yahtzee
-    - If all dice have the same number, the player scores 50 points.
+  - If all dice have the same number, the player scores 50 points.
