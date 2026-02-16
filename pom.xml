@@ -39,7 +39,7 @@
         <assertj-core.version>3.27.7</assertj-core.version>
         <maven-surefire-plugin.version>3.5.4</maven-surefire-plugin.version>
         <jacoco-maven-plugin.version>0.8.14</jacoco-maven-plugin.version>
-        <junit-jupiter.version>6.0.2</junit-jupiter.version>
+        <junit-jupiter.version>6.0.3</junit-jupiter.version>
     </properties>
 
     <dependencyManagement>
