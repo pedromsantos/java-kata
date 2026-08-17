@@ -33,6 +33,11 @@
         <module>18-esa-mars-rover</module>
         <module>19-social-network</module>
         <module>20-katacombs</module>
+        <module>21-smelly-mars-rover</module>
+        <module>22-smelly-shopping-cart</module>
+        <module>23-tic-tac-toe-mock</module>
+        <module>24-shopping-cart</module>
+        <module>26-smelly-yahtzee</module>
         <module>coverage</module>
     </modules>
 
