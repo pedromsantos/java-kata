@@ -21,7 +21,7 @@
     </description>
 
     <properties>
-        <java.version>21</java.version>
+        <java.version>17</java.version>
     </properties>
 
     <dependencies>
@@ -73,7 +73,7 @@
                     </execution>
                 </executions>
             </plugin>
-            <!-- Explicitly setting up instrumentation for inline mocking with Mockito (Java 21+)  -->
+            <!-- Explicitly setting up instrumentation for inline mocking with Mockito. -->
             <!-- Ref: https://javadoc.io/static/org.mockito/mockito-core/5.16.0/org.mockito/org/mockito/Mockito.html#0.3 -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
