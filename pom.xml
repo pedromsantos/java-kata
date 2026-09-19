@@ -38,6 +38,8 @@
         <module>23-tic-tac-toe-mock</module>
         <module>24-shopping-cart</module>
         <module>26-smelly-yahtzee</module>
+        <module>27-smelly-solid</module>
+        <module>28-smelly-connascence</module>
         <module>coverage</module>
     </modules>
 
