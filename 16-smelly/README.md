@@ -4,6 +4,13 @@
 
 We created a very smelly implementation of TicTacToe.
 
+The winner-checking logic is split across `RowWinnerChecker`, `ColumnWinnerChecker`
+and `DiagonalWinnerChecker`, each independently re-implementing the same
+"are these three tiles taken and equal" pattern instead of sharing one
+extracted line-checking algorithm. `Game.winner()` now checks rows, columns
+and diagonals (it used to check rows only), delegating to all three
+checkers in turn.
+
 There are a number of code smells in the implementation namely:
 
 - Primitive obsession

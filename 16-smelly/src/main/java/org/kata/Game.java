@@ -3,6 +3,9 @@ package org.kata;
 public class Game {
     private char _lastSymbol = ' ';
     private Board _board = new Board();
+    private RowWinnerChecker _rowWinnerChecker = new RowWinnerChecker();
+    private ColumnWinnerChecker _columnWinnerChecker = new ColumnWinnerChecker();
+    private DiagonalWinnerChecker _diagonalWinnerChecker = new DiagonalWinnerChecker();
 
     public void play(char symbol, int x, int y) throws Exception {
         //if first move
@@ -27,44 +30,16 @@ public class Game {
     }
 
     public char winner() {
-        //if the positions in first row are taken
-        if (_board.tileAt(0, 0).Symbol != ' ' &&
-                _board.tileAt(0, 1).Symbol != ' ' &&
-                _board.tileAt(0, 2).Symbol != ' ') {
-            //if first row is full with same symbol
-            if (_board.tileAt(0, 0).Symbol ==
-                    _board.tileAt(0, 1).Symbol &&
-                    _board.tileAt(0, 2).Symbol == _board.tileAt(0, 1).Symbol) {
-                return _board.tileAt(0, 0).Symbol;
-            }
+        char rowWinner = _rowWinnerChecker.check(_board);
+        if (rowWinner != ' ') {
+            return rowWinner;
         }
 
-        //if the positions in first row are taken
-        if (_board.tileAt(1, 0).Symbol != ' ' &&
-                _board.tileAt(1, 1).Symbol != ' ' &&
-                _board.tileAt(1, 2).Symbol != ' ') {
-            //if middle row is full with same symbol
-            if (_board.tileAt(1, 0).Symbol ==
-                    _board.tileAt(1, 1).Symbol &&
-                    _board.tileAt(1, 2).Symbol ==
-                            _board.tileAt(1, 1).Symbol) {
-                return _board.tileAt(1, 0).Symbol;
-            }
+        char columnWinner = _columnWinnerChecker.check(_board);
+        if (columnWinner != ' ') {
+            return columnWinner;
         }
 
-        //if the positions in first row are taken
-        if (_board.tileAt(2, 0).Symbol != ' ' &&
-                _board.tileAt(2, 1).Symbol != ' ' &&
-                _board.tileAt(2, 2).Symbol != ' ') {
-            //if middle row is full with same symbol
-            if (_board.tileAt(2, 0).Symbol ==
-                    _board.tileAt(2, 1).Symbol &&
-                    _board.tileAt(2, 2).Symbol ==
-                            _board.tileAt(2, 1).Symbol) {
-                return _board.tileAt(2, 0).Symbol;
-            }
-        }
-
-        return ' ';
+        return _diagonalWinnerChecker.check(_board);
     }
 }
